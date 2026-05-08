@@ -1,0 +1,46 @@
+{
+  "file": "a_steam_data_2021_2025/1-level/1-KB/minified.json",
+  "type": "minified",
+  "total": 3,
+  "page": 1,
+  "limit": 3,
+  "count": 3,
+  "data": [
+    {
+      "appid": "1537980",
+      "name": "Myriavora",
+      "release_year": "2021",
+      "release_date": "Jul 5, 2021",
+      "genres": "Action;Indie;Early Access",
+      "categories": "Single-player;Steam Achievements;Steam Cloud;Steam Leaderboards;Family Sharing",
+      "price": "12.99",
+      "recommendations": "0",
+      "developer": "Jürgen Hoffmann",
+      "publisher": "Jürgen Hoffmann"
+    },
+    {
+      "appid": "3216370",
+      "name": "Colony X",
+      "release_year": "2025",
+      "release_date": "Q4 2025",
+      "genres": "Action",
+      "categories": "Single-player;Multi-player;PvP;Online PvP;Co-op;Online Co-op;Family Sharing",
+      "price": "0.0",
+      "recommendations": "0",
+      "developer": "WINDY TALE",
+      "publisher": "WINDY TALE"
+    },
+    {
+      "appid": "3057180",
+      "name": "Abnormal1999:Sector 49",
+      "release_year": "2024",
+      "release_date": "Jul 26, 2024",
+      "genres": "Adventure",
+      "categories": "Single-player;Steam Achievements;Partial Controller Support;Steam Cloud;Family Sharing",
+      "price": "2.99",
+      "recommendations": "131",
+      "developer": "QZQ Studio",
+      "publisher": "QZQ Studio"
+    }
+  ]
+}
