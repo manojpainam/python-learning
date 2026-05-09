@@ -1,0 +1,98 @@
+[
+  {
+    "id": 201,
+    "name": "iPhone 15",
+    "brand": "Apple",
+    "category": "Mobiles",
+    "price": 79999,
+    "stock": 15,
+    "rating": 4.8,
+    "is_available": true,
+    "specifications": {
+      "ram": "8GB",
+      "storage": "256GB",
+      "color": "Black"
+    },
+    "seller": {
+      "seller_id": 501,
+      "seller_name": "Tech Store",
+      "location": "Hyderabad"
+    },
+    "reviews": [
+      {
+        "user": "Rahul",
+        "rating": 5,
+        "comment": "Excellent phone"
+      },
+      {
+        "user": "Sneha",
+        "rating": 4,
+        "comment": "Camera is amazing"
+      }
+    ]
+  },
+  {
+    "id": 202,
+    "name": "Samsung Galaxy S24",
+    "brand": "Samsung",
+    "category": "Mobiles",
+    "price": 69999,
+    "stock": 10,
+    "rating": 4.6,
+    "is_available": true,
+    "specifications": {
+      "ram": "12GB",
+      "storage": "512GB",
+      "color": "Silver"
+    },
+    "seller": {
+      "seller_id": 502,
+      "seller_name": "Mobile Hub",
+      "location": "Bangalore"
+    },
+    "reviews": [
+      {
+        "user": "Kiran",
+        "rating": 5,
+        "comment": "Very smooth performance"
+      },
+      {
+        "user": "Asha",
+        "rating": 4,
+        "comment": "Battery backup is good"
+      }
+    ]
+  },
+  {
+    "id": 203,
+    "name": "Sony Headphones",
+    "brand": "Sony",
+    "category": "Audio",
+    "price": 8999,
+    "stock": 25,
+    "rating": 4.4,
+    "is_available": true,
+    "specifications": {
+      "type": "Wireless",
+      "battery_life": "30 hours",
+      "color": "Blue"
+    },
+    "seller": {
+      "seller_id": 503,
+      "seller_name": "Audio World",
+      "location": "Chennai"
+    },
+    "reviews": [
+      {
+        "user": "Vamsi",
+        "rating": 4,
+        "comment": "Comfortable to wear"
+      },
+      {
+        "user": "Neha",
+        "rating": 5,
+        "comment": "Sound quality is top notch"
+      }
+    ]
+  }
+]
