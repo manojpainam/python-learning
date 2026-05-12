@@ -30,6 +30,29 @@ if 'manoj' in names:
 '''
 chnage list items
 '''
-names.append("surya kumary yadav")
+names[2] = "vamshi" #chnage the 3rd element of the list
+print("List after updation", names)
+names[2:4] = ["vamshi P", "Prasad P"] #update the values of the third and fourth element 
 print(names)
 
+names.insert(0, "Sravya")
+print(names) #to insert new element without changing the existing values we have to use insert
+
+
+
+'''
+Add ietms to the list
+'''
+names.append("surya kumary yadav") #Add elment at the end of the list using Append
+print(names)
+
+contries = ["India", "Russia", "USA"]
+nearby_contrues = ["china", "bangladesh"]
+
+contries.extend(nearby_contrues) #to extend element from another list
+print(contries)
+
+#extend method doesn't necessarly need to be a list it can be any iterable as well - tuple, set, dict as well
+thistuple = ('thailand', 'nepal')
+contries.extend(thistuple)
+print("countries after the tuple extension", contries)
