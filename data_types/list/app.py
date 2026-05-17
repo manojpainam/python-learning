@@ -53,6 +53,90 @@ contries.extend(nearby_contrues) #to extend element from another list
 print(contries)
 
 #extend method doesn't necessarly need to be a list it can be any iterable as well - tuple, set, dict as well
-thistuple = ('thailand', 'nepal')
+thistuple = ('thailand', 'nepal', 'fiji')
 contries.extend(thistuple)
 print("countries after the tuple extension", contries)
+
+'''
+Remove items
+'''
+#remove specific item from the list
+names.remove("surya kumary yadav")
+print(names)
+
+#remove 0th element from the list
+names.pop(0)
+print(names)
+
+#if not specifoed the index in the pop then it will automatically remove the last item
+names.pop()
+print(names)
+
+#rdel keyword is used to delete the list completely
+del names[0]
+print(names)
+
+#to clear the ietms in the list retaining the list
+# names.clear()
+
+# print(names)
+
+'''
+Looping list
+'''
+print("\nPrinting items through the normal looping of the list - ")
+for country in contries:
+    print(country)
+
+print("\nPrinting items through the normal looping of the list using range and len- ")
+for i in range(len(contries)):
+    print(contries[i])
+
+print("\nusing while loop")
+count = 0
+while(count < len(contries)):
+    print(contries[count])
+    count += + 1
+
+print("\nUsing short for loop")
+[print(x) for x in contries]
+
+#List conprehension
+new_contries = [x for x in contries if "a" in x]
+print("\nnew contries : ", new_contries)
+
+#list comprehensation using the ramge
+nums_greater_10 = [x for x in range(11) if x > 5]
+print(nums_greater_10)
+
+'''
+Sorting lists
+'''
+names.append("Gawtham")
+print("\nnames before sorting : ", names)
+names.sort()
+print("\nnames after sorting : ", names)
+
+numbers = [3, 5, 33, 21, 46, 9, 56, 89, 10]
+print("\nNumber before sorting : ", numbers)
+numbers.sort()
+print("\nNumbers after sorting : ", numbers)
+numbers.sort(reverse=True)
+print("\nNumbers in descending order : ", numbers)
+
+
+
+# Returns how far a number is from 50
+# Smaller value means closer to 50
+def myfunc(n):
+    return abs(n - 50)
+
+# List of numbers
+thislist = [100, 50, 65, 82, 23]
+
+# sort() uses the returned value from myfunc()
+# Numbers closest to 50 come first
+thislist.sort(key=myfunc)
+
+print(thislist)
+
