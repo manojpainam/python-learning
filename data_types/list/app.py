@@ -174,4 +174,20 @@ print(using_slice_operator)
 '''
 join lists
 '''
+#using concatination operator
+group1 = ["RCB", "MI", "CSK", "PBKS", "GT"]
+group2 = ["RR", "SRH", "LSG", "KKR", "DC"]
+
+print(group1 + group2)
+
+#looping and appending to group1
+for team in group2:
+    group1.append(team)
+
+print(group1)
+
+#using extend
+old_teams = ["RPS", "DCH"]
+group1.extend(old_teams)
+print(group1)
 
