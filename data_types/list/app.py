@@ -140,3 +140,38 @@ thislist.sort(key=myfunc)
 
 print(thislist)
 
+print("\nsort in reverse")
+#thislist.sort(reverse=True)
+#print(thislist)
+thislist.reverse()
+print(thislist)
+
+
+fruitslist = ["Orange", "cherry", "Kiwi", "Apple"]
+#this is will sort the data based on the alphabatical order
+fruitslist.sort(key=str.lower)
+print(fruitslist)
+
+#this will sort the data based on the data we have provide
+#example list is [1, 2, 4, 3] then rever will become [3, 4, 2, 1]
+the_numbers = [1, 2, 4, 3]
+the_numbers.reverse()
+print(the_numbers)
+
+
+'''
+Copying the list
+'''
+our_family_names = ["manoj", "vamshi", "purna", "prasad"]
+copied_names = our_family_names.copy()
+print(copied_names)
+using_list_method = list(our_family_names)
+print(using_list_method)
+using_slice_operator = our_family_names[:]
+print(using_slice_operator)
+
+
+'''
+join lists
+'''
+
