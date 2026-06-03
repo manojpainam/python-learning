@@ -14,7 +14,7 @@ print(fruits)
 print(len(fruits)) #length of the list
 
 #to create a new list we have to use contructor by using list()
-names = list(('manoj','purna', 'vanshi', 'prasad'))
+names = list(('manoj','purna', 'vamshi', 'prasad'))
 print(type(names)) #print type of the list
 
 '''
