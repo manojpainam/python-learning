@@ -70,3 +70,38 @@ states = ("maharastra", "kerala", "andhra pradesh", "telangana", "tamilnadu", "w
 (mp, *southern_states, wb) = states
 
 print(southern_states)
+print("\n")
+'''
+Looping tuples
+'''
+for name in names:
+    print(name)
+
+print("\n")
+for state in southern_states:
+    print(state)
+
+print("\nSouther states looping through range - ")
+#looping through range
+for i in range(len(southern_states)):
+    print(southern_states[i])
+
+print("\nnames looping through while loop - ")
+index = 0
+while index < len(names):
+    print(names[index])
+    index += 1
+
+'''
+Joining tuples
+'''
+tuple1 = ("a", "b", "c")
+tuple2 = (1, 2, 3, 4)
+
+#tuples can be joined using the + "concatination operator"
+tuple3 = tuple1 + tuple2
+print(tuple3)
+
+#multiplying tuples
+tuple4 = tuple3 * 2
+print(tuple4)
