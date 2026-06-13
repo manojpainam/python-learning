@@ -105,3 +105,33 @@ Copying dict
 #we can't copy the dict directly by dict2 = dict1 because changes made to dict1 will sync to dict2 instead it can be copied using copy method
 copied_dict = new_dict.copy()
 print(copied_dict)
+
+
+'''
+Nested dict's
+'''
+
+nested_dict = {
+    "elder_son" : {
+        "name":"manoj",
+        "age":25
+    },
+    "younger_son" : {
+        "name":"vamshi",
+        "age":21
+    },
+    "mother" : {
+        "name":"purna",
+        "age":40
+    }
+}
+
+print(nested_dict)
+
+
+#accessing values of a nested dict
+print(nested_dict["elder_son"]["name"])
+
+#looping the nested dicts
+for key, value in nested_dict.items():
+    print(key, value)
