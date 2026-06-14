@@ -172,3 +172,26 @@ def myfunc(n):
 
 my_doubles = myfunc(2)
 print(my_doubles(11))
+
+'''
+Recursion is a function calling it self
+'''
+
+def do_job(n):
+    if n <= 0:
+        print("Job is Done")
+    else:
+        print(n)
+        do_job(n-1)
+
+do_job(5)
+
+
+#for a recursion there will be two set of statements - a base condition (when it should stop) - Recursive case (calling itself with modified data)
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+    
+print(factorial(10))
