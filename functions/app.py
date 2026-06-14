@@ -81,3 +81,94 @@ def comibned(a, b, /, *, c, d):
     print("Received ", a, " ", b, " ", c, " ", d)
 
 comibned(56, 65, c = 91, d = 100)
+
+
+#By default function has to be called with certail params in specific cases we may not know how many params are being passed.
+'''
+arbitrary arguments - when we don't know the how many number of args can be passed to a method
+        - if we keep * then it will become a arbitrary args the functions will receive a tuple elements
+'''
+def arbitrary_args(*args):
+    return "I have received this parmas : " + args[0] + " " + args[1]
+
+print(arbitrary_args("Passport", "Name"))
+
+
+##arg with regular aruguments
+def greet_people(greeting, *names):
+    for name in names:
+        print(greeting, name)
+
+greet_people("Hello", "Manoj", "Vamshi", "Prasad")
+
+
+#practical example : sum of all the numbers
+def sum(*numbers):
+    total = 0
+    for number in numbers:
+        total += number
+    
+    return total
+
+print(sum(10, 20, 30, 40))
+print(sum(10, 20, 30, 40, 50))
+print(sum(10))
+
+
+#practical example : max of all the numbers
+def find_max(*numbers):
+    if len(numbers) == 0:
+        return None
+    max = numbers[0]
+    for number in numbers:
+        if number > max:
+            max = number
+    
+    return max
+
+print("The maximum number is : ", max(89, 67, 100, 105, 45, 68))
+
+
+''''
+Arbitrary keyword arguments -
+        sometimes we don't know how many parameters can be passed to a function in such cases we need to use this
+        can be defined by **
+'''
+def arbitrary_args(**names):
+    return "Hello" + names["fname"] + " " + names["lname"]
+
+print(arbitrary_args(fname = "Manoj", lname = "P"))
+
+'''
+Decarators - it add extra behaviour to the function without changing the function code
+A decorator is a function that takes another functions as a input and returns a new function
+'''
+
+def changecase(func):
+    def myinnerfunc():
+        return func().upper()
+    return myinnerfunc
+
+
+@changecase
+def greet_with_decorator():
+    return "hello manoj painam"
+
+print(greet_with_decorator())
+
+print(greet_with_decorator.__name__)
+
+'''
+Lambda
+'''
+# lambda arguments : expressions
+
+product = lambda a, b : a * b
+print(product(45, 34))
+
+#lambda functions
+def myfunc(n):
+    return lambda a : a * n
+
+my_doubles = myfunc(2)
+print(my_doubles(11))
