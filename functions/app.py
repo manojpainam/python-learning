@@ -1,6 +1,7 @@
 '''
 In python functions are defined by def keyword
 '''
+from module import sum_data
 
 #Function : function is a piece of code which runs only when it is called
 
@@ -195,3 +196,36 @@ def factorial(n):
         return n * factorial(n - 1)
     
 print(factorial(10))
+
+def find_max_number(numbers):
+    if len(numbers) == 1:
+        return numbers[0]
+    else:
+        max = find_max_number(numbers[1:])
+        return numbers[0] if numbers[0] > max else max
+    
+print(find_max_number([1, 4, 5, 9, 6, 0]))
+
+import sys
+#default value fro recursion limit is 1000 can be increased using setrecursionlimit
+print(sys.getrecursionlimit())
+
+
+#Range is a function which will return immutable sequence of numbers
+'''
+Basic syntax for range - range(start, end, step)
+'''
+#it will start with 0 by default
+for i in range(5):
+    print(i)
+
+#it will start from the 1
+for i in range(1, 5):
+    print(i)
+
+#now it will step 2 at a time
+for i in range(0, 5, 2):
+    print(i)
+
+
+print("It is caluated from the sum data function from another module : ", sum_data([1, 2, 3, 4, 5]))
