@@ -2,6 +2,10 @@
 In python functions are defined by def keyword
 '''
 from module import sum_data
+from information import education, alias_example as smaple_data
+from datetime import datetime as dt
+import math
+import json
 
 #Function : function is a piece of code which runs only when it is called
 
@@ -229,3 +233,58 @@ for i in range(0, 5, 2):
 
 
 print("It is caluated from the sum data function from another module : ", sum_data([1, 2, 3, 4, 5]))
+
+#this data we are bringing it from the information module
+print("This data is being fetched from information.py file : ", education["college"])
+
+#this data we are bringing it from the information module but the key has been aliased as sample_data
+print("This data is being fetched from information.py file : ", smaple_data["programming_langues"])
+
+
+'''
+Dates
+'''
+#Current time
+print(dt.now())
+
+print(dt.now().year)
+
+print(dt.now().month)
+
+print(dt(2026, 5, 25))
+
+now = dt.now()
+#print full name of the month
+print(now.strftime("%B"))
+
+'''
+Math
+'''
+#python has some built in functions
+print(max(90, 900, 78))
+print(min(87, 56, -1))
+
+#absolute function
+print(abs(-987))
+
+#power
+print(pow(4, 3))
+
+print(math.sqrt(181))
+
+
+'''
+json - it is used to create a json object using the string or vice versa
+'''
+
+#converting json string to json
+data =  '{ "name":"John", "age":30, "city":"New York"}'
+data = json.loads(data)
+
+#convert python dict to json
+sample_dict = {
+    "name" : "manoj",
+    "gender" : "male"
+}
+json_data = json.dumps(sample_dict)
+print(json_data)
