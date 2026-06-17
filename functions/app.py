@@ -288,3 +288,93 @@ sample_dict = {
 }
 json_data = json.dumps(sample_dict)
 print(json_data)
+
+
+'''
+PIP in python - pip is a package manager to manage packges in python
+'''
+#install this module using pip install camelcase
+#uninstall the same by using - pip uninstall camelcase
+#to list all packages in the pip using - pip list
+import camelcase
+
+text = "hello world"
+c = camelcase.CamelCase()
+
+#hump method returns the camelcase of the word
+print(c.hump(text))
+
+
+'''
+Exception handling
+'''
+# Try - lets you to write code that may have erros
+#catch - will handle the error caused and lets know why it is being breaked
+# else - if there is no error then else will get printed
+# finally - it will execute regardless there is a error
+
+try:
+    name = "manoj"
+    print(name)
+except Exception as e:
+    print(e)
+else:
+    print("Eww nothing went wrong")
+finally:
+    print("I will print regardless of the result")
+
+#raise - raise keyword is used to raise an exception
+# number = -1
+# if number < 0:
+#     raise Exception("No negative numbers")
+
+'''
+String formatting
+'''
+my_name = "manoj"
+print(f'This is my name : {my_name}')
+
+dollar_price = 95
+print("dollar price is {}".format(dollar_price))
+print("sample data is {}".format(smaple_data))
+
+car = "eritga"
+top_speed = 120
+
+print("We have a car with name : {}, and it top speed is {}".format(car, top_speed))
+
+'''
+None is a special type of varibale in python which will descibe its abscence
+'''
+x = None
+print(x)
+print(type(x))
+
+#comparison of None should be done this way
+result = None
+if result is None:
+    print("Result is None")
+else:
+    print("Result has value : {}".format(result))
+
+#None will be evalutes as False
+print(bool(None))
+
+'''
+User input
+'''
+#to take the user input by using input method
+# print("Enter your name")
+# name = input()
+# print("Hello {}".format(name))
+
+# #use input method as a prompt
+# user_input = input("Enter the any desired sodtware role : ")
+# print("User entered the {}".format(user_input))
+
+#virtual environment is a sepearte container which will have its own dependencies set of project specific
+import cowsay
+
+cowsay.cow("Good Night")
+
+cowsay.draw("Manoj", 'O', True)
