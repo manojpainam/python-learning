@@ -45,8 +45,12 @@ print(user.age)
 
 #Default values for __init__() method
 class Car:
+    #class properties
+    is_car_certified = True
+    location = ""
+
     def __init__(self, name, model, person_name, color="Black"):
-        #slef parameters
+        #slef parameters also known as object properties
         self.name = name
         self.model = model
         self.person_name = person_name
@@ -67,3 +71,55 @@ print("car : {}, model : {}, color : {}".format(car.name, car.model, car.color))
 car.start()
 
 car.wish_user()
+
+#modifying properties
+car.name = "BMW"
+print(car.name)
+
+#delete properties
+del car.color
+
+car.location = "hyderabad"
+
+#class variables
+print(Car.is_car_certified)
+print(car.location)
+
+#Add new properties which doesn't exists
+car.brand = "BMW"
+
+print(car.brand)
+
+
+'''
+class methods
+'''
+class Calculator:
+    pi = 3.17
+    def __init__(self, number1, number2):
+        self.number1 = number1
+        self.number2 = number2
+
+    def add(self, number1, number2):
+        return number1 + number2
+    
+    def substract(self, number1, number2):
+        return number1 - number2
+    
+    def multiply(self, number1, number2):
+        return number1 * number2
+    
+    def divide(self, number1, number2):
+        if number2 == 0:
+            raise ZeroDivisionError
+        
+        return number1 / number2
+
+number1 = 5
+number2 = 0
+calculator = Calculator(number1, number2)
+print(calculator.add(number1, number2))
+print(calculator.substract(number1, number2))
+print(calculator.multiply(number1, number2))
+print(calculator.divide(number1, number2))
+    
