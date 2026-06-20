@@ -95,11 +95,12 @@ print(car.brand)
 class methods
 '''
 class Calculator:
-    pi = 3.17
+    pi = 3.17 #class properties
     def __init__(self, number1, number2):
         self.number1 = number1
         self.number2 = number2
 
+    #class methods
     def add(self, number1, number2):
         return number1 + number2
     
@@ -114,12 +115,29 @@ class Calculator:
             raise ZeroDivisionError
         
         return number1 / number2
+    
+    def __str__(self):
+        return "Called calualtor nethod with params {} and {}".format(number1, number2)
+    
+    #for the nmethod of the class first param should be slef
+    def goint_to_delete(self):
+        return "This will be going to delete"
 
 number1 = 5
-number2 = 0
+number2 = 6
 calculator = Calculator(number1, number2)
 print(calculator.add(number1, number2))
 print(calculator.substract(number1, number2))
 print(calculator.multiply(number1, number2))
 print(calculator.divide(number1, number2))
-    
+print(calculator)
+
+print(calculator.goint_to_delete())
+del calculator.goint_to_delete
+
+try:
+    print("From here")
+    print((calculator.goint_to_delete()))
+except AttributeError as e:
+    print(str(e))
+
