@@ -30,7 +30,7 @@ if 'manoj' in names:
 '''
 chnage list items
 '''
-names[2] = "vamshi" #chnage the 3rd element of the list
+names[2] = "Manoj Painam" #change the 3rd element of the list
 print("List after updation", names)
 names[2:4] = ["vamshi P", "Prasad P"] #update the values of the third and fourth element 
 print(names)
@@ -47,7 +47,7 @@ names.append("surya kumary yadav") #Add elment at the end of the list using Appe
 print(names)
 
 contries = ["India", "Russia", "USA"]
-nearby_contrues = ["china", "bangladesh"]
+nearby_contrues = ["chaina", "bangladesh"]
 
 contries.extend(nearby_contrues) #to extend element from another list
 print(contries)
@@ -72,7 +72,7 @@ print(names)
 names.pop()
 print(names)
 
-#rdel keyword is used to delete the list completely
+#del keyword is used to delete the list completely
 del names[0]
 print(names)
 
@@ -88,7 +88,7 @@ print("\nPrinting items through the normal looping of the list - ")
 for country in contries:
     print(country)
 
-print("\nPrinting items through the normal looping of the list using range and len- ")
+print("\nPrinting items through the normal looping of the list using range and len functions ")
 for i in range(len(contries)):
     print(contries[i])
 
@@ -103,11 +103,11 @@ print("\nUsing short for loop")
 
 #List conprehension
 new_contries = [x for x in contries if "a" in x]
-print("\nnew contries : ", new_contries)
+print("\Contries which has a in their names : ", new_contries)
 
 #list comprehensation using the ramge
-nums_greater_10 = [x for x in range(11) if x > 5]
-print(nums_greater_10)
+nums_greater_than_five = [x for x in range(11) if x > 5]
+print(nums_greater_than_five)
 
 '''
 Sorting lists
