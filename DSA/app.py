@@ -47,7 +47,7 @@ print(factorial(10))
 O(n) Time complexity -
                 The time complexity of this problem is O(n) as we are doing the only one loop and rest we are changing the values of the variables/constants
                 O(n) - is the better time complexity algorithm also known as the linear time complexity
-Kadane's algorith
+                Examples - Kadane's algorithm, nth fabinocci series
 '''
 def max_subarray_sum(arr):
     res = arr[0]
@@ -62,4 +62,36 @@ def max_subarray_sum(arr):
     return res
 
 print(max_subarray_sum([-2, -4]))
+
+'''
+O(n^2) or O(n^3) Time complexity - 
+                            This is mostly used in the sorting techniques.
+                            Bubble sort, insertion sort, selection sort are the examples of the sorting tevhniques
+                            this will have the nested loops
+'''
+
+#bubble sorting functionality - it tries to sort the order of elementd in s array(list)
+def bubble_sort(arr):
+    length = len(arr)
+
+    for i in range(length):
+        for j in range(0, length - i - 1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+
+    return arr
+
+arr = [90, 8, 56, 4, 55, 543, 876, 1034, 78]
+print(bubble_sort(arr))
+
+
+'''
+O(logn) Time Complexity - 
+                    This is the second most optimized or high time efficient algorithm after O(1)
+                    Examples : Binary search
+
+                    logic : The array/list will become half every time we do the operation 
+                    Example : n -> n/2 -> n/4 -> n/8 ...... 1 which will also become n/2^0  -> n/2^1 -> n/2^2 ...... n/2^x => n = 2^x => log2n = x 
+'''
+
 
