@@ -42,3 +42,24 @@ def factorial(number):
     return factorial
 
 print(factorial(10))
+
+'''
+O(n) Time complexity -
+                The time complexity of this problem is O(n) as we are doing the only one loop and rest we are changing the values of the variables/constants
+                O(n) - is the better time complexity algorithm also known as the linear time complexity
+Kadane's algorith
+'''
+def max_subarray_sum(arr):
+    res = arr[0]
+
+    max_element = arr[0]
+
+    for i in range(1, len(arr)):
+        max_element = max(max_element + arr[i], arr[i])
+
+        res = max(res, max_element)
+    
+    return res
+
+print(max_subarray_sum([-2, -4]))
+
