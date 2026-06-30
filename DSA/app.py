@@ -93,5 +93,45 @@ O(logn) Time Complexity -
                     logic : The array/list will become half every time we do the operation 
                     Example : n -> n/2 -> n/4 -> n/8 ...... 1 which will also become n/2^0  -> n/2^1 -> n/2^2 ...... n/2^x => n = 2^x => log2n = x 
 '''
+def binary_search(arr, target):
+    left = 0
+    right = len(arr) - 1
+
+    while left <= right:
+        mid = (left + right) // 2
+
+        if arr[mid] == target:
+            return mid
+        
+        if arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return - 1
+
+arr = [1, 5, 6, 7, 99, 100, 456, 789, 990]
+print("Element found at index :", binary_search(arr, 789))
 
 
+'''
+O(nlogn) Time Complexity -
+                    This is also Divide and conqure techiniques
+                    Examples : Merge sort, Heap sort, Quick sort,
+
+                    This is better than the O(n^2) time complexity
+'''
+
+'''
+O(2^n) Time complexity -
+                This is also called as the exponential time complexity
+                Examples - Recursion (Brute force)
+                This a not a good time complexity
+'''
+
+'''
+O(n!) Time Complexity -
+                This is used to solve the problems via brute-force approach
+                Examples : n queens, Knights tours, strig -> all possibile permutations
+                This is even worse time complexity even then the O(2"n)
+                it will go on like this n * (n - 1) * (n-2) * ...... * 3 * 2 * 1
+'''
