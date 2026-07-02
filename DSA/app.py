@@ -135,3 +135,21 @@ O(n!) Time Complexity -
                 This is even worse time complexity even then the O(2"n)
                 it will go on like this n * (n - 1) * (n-2) * ...... * 3 * 2 * 1
 '''
+
+
+unsorted_array = [895, 789, 534, 93, 90, 89, 67, 56, 56, 4, 1]
+
+size = len(unsorted_array)
+count = 0
+check = 0
+
+for i in range(size - 1):
+    for j in range(size - i - 1):
+        check += 1
+        if unsorted_array[j] > unsorted_array[j + 1]:
+            count += 1
+            unsorted_array[j], unsorted_array[j+1] = unsorted_array[j+1], unsorted_array[j]
+
+print("Sorted array :", unsorted_array)
+print("number of opeartions :", count)
+print("number of checks :", check)
