@@ -82,3 +82,32 @@ def guess_number():
                 count += 1
             
 guess_number()
+
+
+def longestCommonPrefix(strs):
+    # Edge case: no strings given, so there's no prefix to find
+    if not strs:
+        return ""
+
+    # Start by assuming the entire first string is the common prefix.
+    # We'll shrink this guess as we compare against the other strings.
+    prefix = strs[0]
+
+    # Compare our current guess against every other string in the list
+    for s in strs[1:]:
+        # Keep chopping the last character off prefix until
+        # the current string actually starts with it
+        while not s.startswith(prefix):
+            prefix = prefix[:-1]
+
+            # If we've trimmed all the way down to nothing,
+            # there's no common prefix at all — exit early
+            if not prefix:
+                return ""
+
+    # After checking against every string, whatever remains
+    # in prefix is the longest common prefix
+    return prefix
+
+strs = ["mango", "manoj", "manchuria", "mangrooves"]
+print("Longest prefix is : ", longestCommonPrefix(strs))
