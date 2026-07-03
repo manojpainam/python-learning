@@ -111,3 +111,27 @@ def longestCommonPrefix(strs):
 
 strs = ["mango", "manoj", "manchuria", "mangrooves"]
 print("Longest prefix is : ", longestCommonPrefix(strs))
+
+
+#leet code easy problem
+def is_valid(s):
+    stack = []
+    pairs = {
+        '{' : '}',
+        '[' : ']',
+        '(' : ')'
+    }
+
+    for char in s:
+        #check if the char exists in the pairs
+        if char in pairs:
+            #if exists then appened to the stack
+            stack.append(pairs[char])
+        
+        #if the stack is empty or if the last opened bracke is not correct then return False 
+        elif not stack or stack.pop() != char:
+            return False
+    
+    return not stack
+
+print(is_valid("()[]{(})"))
