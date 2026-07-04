@@ -81,7 +81,7 @@ def guess_number():
                 print("Try again with different number")
                 count += 1
             
-guess_number()
+#guess_number()
 
 
 def longestCommonPrefix(strs):
@@ -135,3 +135,21 @@ def is_valid(s):
     return not stack
 
 print(is_valid("()[]{(})"))
+
+
+def two_sum(nums, target):
+    required_num = {}
+
+    for i in range(len(nums)):
+        required = target - nums[i]
+
+        if required in required_num:
+            return [required_num.get(required), i]
+        
+        required_num.update({nums[i] : i})
+    
+    return []
+
+nums = [3, 2, 4]
+target = 6
+print("two sum :", two_sum(nums, target))
