@@ -136,20 +136,80 @@ O(n!) Time Complexity -
                 it will go on like this n * (n - 1) * (n-2) * ...... * 3 * 2 * 1
 '''
 
+'''
+Bubble sort algorithm
+'''
 
-unsorted_array = [895, 789, 534, 93, 90, 89, 67, 56, 56, 4, 1]
+# Sorts the list using the Bubble Sort algorithm
+def bubble_sorting(nums):
+    # Each pass moves the largest unsorted element to the end.
+    for i in range(len(nums) - 1):
+        swapped = False
 
-size = len(unsorted_array)
-count = 0
-check = 0
+        # Compare adjacent elements in the unsorted portion.
+        for j in range(len(nums) - i - 1): #exclude the last element '-i' as they were already sorted
+            if nums[j] > nums[j + 1]:
+                nums[j], nums[j + 1] = nums[j + 1], nums[j]
+                swapped = True
 
-for i in range(size - 1):
-    for j in range(size - i - 1):
-        check += 1
-        if unsorted_array[j] > unsorted_array[j + 1]:
-            count += 1
-            unsorted_array[j], unsorted_array[j+1] = unsorted_array[j+1], unsorted_array[j]
+        # Stop early if no swaps were made.
+        if not swapped:
+            break
 
-print("Sorted array :", unsorted_array)
-print("number of opeartions :", count)
-print("number of checks :", check)
+    return nums
+
+
+nums = [895, 789, 534, 93, 90, 89, 67, 56, 56, 4, 1]
+#print("Sorted list is:", bubble_sorting(nums))
+
+
+'''
+Selection sort algorithm
+'''
+def selection_sort(nums):  # Time Complexity: O(n²)
+    # Move the boundary of the sorted and unsorted portions.
+    for i in range(len(nums) - 1):
+
+        # Assume the first element in the unsorted portion is the smallest.
+        min_index = i
+
+        # Find the index of the smallest element in the remaining unsorted portion.
+        for j in range(i + 1, len(nums)):
+            if nums[j] < nums[min_index]:
+                min_index = j
+
+        # Place the smallest element at the beginning of the unsorted portion.
+        nums[i], nums[min_index] = nums[min_index], nums[i]
+
+    return nums
+
+#print("Selection sort:", selection_sort(nums))
+
+
+'''
+Insertion sort
+'''
+def insertion_sort(nums):
+    # Start from the second element since the first element
+    # is considered to be already sorted.
+    for i in range(1, len(nums)):
+
+        # Store the current element to be inserted into
+        # the correct position in the sorted portion.
+        current = nums[i]
+
+        # Start comparing with the previous element.
+        previous = i - 1
+
+        # Shift all elements greater than 'current'
+        # one position to the right.
+        while previous >= 0 and nums[previous] > current:
+            nums[previous + 1] = nums[previous]
+            previous -= 1
+
+        # Insert the current element into its correct position.
+        nums[previous + 1] = current
+
+    return nums
+
+print("Insertion Sort:", insertion_sort(nums)) 
