@@ -251,3 +251,47 @@ def binarySearch(list, target):
 
     return -1
 
+
+'''
+List and arrays - this is good for the lower data sets and also it has the lesser time complexity
+'''
+def get_lowest_from_list(arr):
+    lowest = arr[0]
+    for i in range(1, len(arr)):
+        if arr[i] < lowest:
+            lowest = arr[i]
+    
+    return lowest
+
+print("Lowest number", get_lowest_from_list(nums))
+
+'''
+Stacks -
+    Stack is a linear data structue in python that follows - Last In First Out (LIFO)
+    The element which got added at the last will get removed first
+    Operations - 
+            push - add a new element on the stack
+            pop - remove and return top element from the stack
+            peek - returns the top element of the stack
+            isEmpty - check if the stack is empty
+            size - finds the size of the stack
+'''
+#push
+nums.append(809)
+
+print(nums)
+
+#pop
+nums.pop()
+
+#peek
+nums[-1]
+
+print(nums)
+
+#isempty
+print(not bool(nums))
+
+#size
+print(len(nums))
+
