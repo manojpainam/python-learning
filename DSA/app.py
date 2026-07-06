@@ -212,4 +212,23 @@ def insertion_sort(nums):
 
     return nums
 
-print("Insertion Sort:", insertion_sort(nums)) 
+print("Insertion Sort:", insertion_sort(nums))
+
+
+'''
+Linear serach : it will compare the each element with the other
+'''
+def liner_search(list, n):
+    for i in range(len(list)):
+        if list[i] == n:
+            return i
+    return -1
+
+list = [1, 89, 10, 45, 77, 65]
+n = 65
+
+result = liner_search(list, n)
+if result != -1:
+    print("Element found at index :", result)
+else:
+    print("Element not found")
