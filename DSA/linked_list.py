@@ -121,6 +121,7 @@ class LinkedList:
 
         # Move until we reach the last node
         while itr.next:
+            # Move to the next node
             itr = itr.next
 
         # Link the last node to the newly created node
@@ -135,6 +136,97 @@ class LinkedList:
         # Insert each value one by one at the end
         for data in list_data:
             self.insert_at_end(data)
+        
+    # Returns the total number of nodes in the linked list
+    def get_length(self):
+        # Stores the number of nodes
+        count = 0
+
+        # Start traversing from the head node
+        itr = self.head
+
+        # Traverse until the end of the linked list
+        while itr:
+            count += 1
+
+            # Move to the next node, otherwise the loop
+            # will keep pointing to the same node forever.
+            itr = itr.next
+
+        return count
+
+
+    # Removes the node at the given index
+    def remove_element(self, index):
+
+        # Check whether the given index is valid
+        if index < 0 or index >= self.get_length():
+            raise Exception("Invalid index")
+
+        # If the first node needs to be removed,
+        # simply move the head to the second node.
+        if index == 0:
+            self.head = self.head.next
+            return
+
+        count = 0
+
+        # Start traversal from the head
+        itr = self.head
+
+        while itr:
+
+            # Stop at the node just before the one
+            # that needs to be deleted.
+            if count == index - 1:
+
+                # Skip the node to be deleted by
+                # connecting the current node to the
+                # next of the node being removed.
+                itr.next = itr.next.next
+                break
+
+            # Move to the next node
+            itr = itr.next
+            count += 1
+
+
+    # Inserts a new node at the specified index
+    def insert_at_index(self, index, data):
+
+        # Check whether the given index is valid
+        if index < 0 or index >= self.get_length():
+            raise Exception("Invalid index")
+
+        # If inserting at the beginning,
+        # reuse the existing method.
+        if index == 0:
+            self.insert_at_begining(data)
+            return
+
+        count = 0
+
+        # Start traversal from the head
+        itr = self.head
+
+        while itr:
+
+            # Stop at the node just before the
+            # desired insertion position.
+            if count == index - 1:
+
+                # Create a new node whose next pointer
+                # points to the current next node.
+                node = Node(data, itr.next)
+
+                # Connect the current node to the
+                # newly created node.
+                itr.next = node
+                break
+
+            # Move to the next node
+            itr = itr.next
+            count += 1
 
 
 # Driver code
@@ -147,8 +239,16 @@ if __name__ == '__main__':
     # ll.insert_at_begining(5)
     # ll.insert_at_begining(67)
 
-    # Insert multiple values
-    ll.insert_values(["banana", "mango", "cherry"])
+    # Insert multiple values into the linked list
+    ll.insert_values(["banana", "mango", "cherry", "grapes"])
 
-    # Print the linked list
+    # Original linked list
+    ll.print()
+
+    # Remove the element at index 2 ("cherry")
+    ll.remove_element(2)
+    ll.print()
+
+    # Insert "dragon" at index 2
+    ll.insert_at_index(2, "dragon")
     ll.print()
