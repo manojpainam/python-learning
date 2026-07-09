@@ -295,3 +295,53 @@ print(not bool(nums))
 #size
 print(len(nums))
 
+#climb stairs
+def climb_stairs(number):
+    if number == 0 or number == 1:
+        return 1
+    return climb_stairs(number - 1) + climb_stairs(number - 2)
+
+print("Possible ways:", climb_stairs(4))
+
+def climbStairs(n):
+    # Base cases:
+    # If there is only 1 stair, there is only 1 way.
+    # If there are 2 stairs, there are 2 ways:
+    #   1 + 1
+    #   2
+    if n <= 2:
+        return n
+
+    # 'first' represents the number of ways to reach stair 1.
+    first = 1
+
+    # 'second' represents the number of ways to reach stair 2.
+    second = 2
+
+    # Start calculating from stair 3 up to the target stair.
+    for _ in range(3, n + 1):
+
+        # To reach the current stair, we can either:
+        # 1. Take one step from the previous stair.
+        # 2. Take two steps from the stair before that.
+        #
+        # Therefore:
+        # ways(current) = ways(previous) + ways(previous_previous)
+        current = first + second
+
+        # Shift the window forward:
+        #
+        # Before update:
+        # first  -> ways(i - 2)
+        # second -> ways(i - 1)
+        #
+        # After update:
+        # first  -> ways(i - 1)
+        # second -> ways(i)
+        first = second
+        second = current
+
+    # 'second' now stores the number of ways to reach the final stair.
+    return second
+
+print("climbStairs :", climbStairs(40))
