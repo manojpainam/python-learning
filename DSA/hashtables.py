@@ -33,7 +33,8 @@ Building a simple Hash Table:
 
 # Create an empty hash table
 # Each position will later store one or more values.
-my_list = [None, None, None, None, None, None, None, None, None, None]
+#my_list = [None, None, None, None, None, None, None, None, None, None]
+my_list = [[] for _ in range(10)]
 
 # -----------------------------------
 # Create a Hash Function
@@ -86,10 +87,10 @@ def contains(name):
     return my_list[index] == name
 
 
-add('Pete')
-add('Jones')
-add('Lisa')
-add('Siri')
+# add('Pete')
+# add('Jones')
+# add('Lisa')
+# add('Siri')
 
 print(my_list)
 
