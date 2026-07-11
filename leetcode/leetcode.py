@@ -1,6 +1,7 @@
 from typing import List
 
 
+#boyer moore voting algorithm
 def majorityElement(nums: List[int]) -> int:
     candidate = None
     count = 0
