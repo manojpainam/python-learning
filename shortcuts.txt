@@ -1,0 +1,10 @@
+command + . --> organise imports
+command + shift + 3 --> entire page screenshot
+command + shift + 4 --> selected area screenshot
+command + k + w --> close all windows
+command + s --> save
+command + x --> cut
+command + v --> paste
+command + c --> copy
+control + - --> previous cursor location
+contril + shift + - ---> next cursor location
