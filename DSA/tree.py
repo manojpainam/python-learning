@@ -166,3 +166,128 @@ Worst case (unbalanced tree):
 Balanced trees like AVL Trees avoid this worst case.
 
 '''
+
+#Tree implementation
+class TreeNode:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+
+# Create nodes
+root = TreeNode("R")
+nodeA = TreeNode("A")
+nodeB = TreeNode("B")
+nodeC = TreeNode("C")
+nodeD = TreeNode("D")
+nodeE = TreeNode("E")
+nodeF = TreeNode("F")
+nodeG = TreeNode("G")
+
+# Build the tree
+root.left = nodeA
+root.right = nodeB
+
+nodeA.left = nodeC
+nodeA.right = nodeD
+
+nodeB.left = nodeE
+nodeB.right = nodeF
+
+nodeF.left = nodeG
+
+
+'''
+The tree looks like this:
+
+                R
+              /   \
+             A     B
+            / \   / \
+           C   D E   F
+                  /
+                 G
+
+Root Node  : R
+
+Leaf Nodes : C, D, E, G
+
+Internal Nodes : R, A, B, F
+
+Parent of G : F
+
+Children of B : E, F
+'''
+
+print(root.right.left.data)   # E
+
+'''
+Types of Binary Trees
+    1. Balanced Binary Tree
+
+    A Binary Tree is balanced if, for every node, the height difference between its left and right subtrees is at most 1.
+
+    Example:
+
+        A
+       / \
+      B   C
+     /     \
+    D       E
+
+    
+2. Complete Binary Tree
+
+    A Complete Binary Tree has:
+
+    Every level completely filled except possibly the last.
+    The last level is filled from left to right.
+
+    Example:
+    Complete
+        A
+      /   \
+     B     C
+    / \   /
+   D   E F
+
+
+   Not Complete
+        A
+      /   \
+     B     C
+      \   /
+       E F
+    Node D is missing while E exists.
+
+3. Full Binary Tree
+
+    A Full Binary Tree is one where every node has either:
+
+    0 children
+    2 children
+
+    Example:
+    Every node has 0 or 2 children.
+        A
+      /   \
+     B     C
+    / \   / \
+   D  E  F  G
+
+4. Perfect Binary Tree
+
+    A Perfect Binary Tree satisfies:
+
+    Every internal node has exactly 2 children.
+    All leaf nodes are at the same level.
+    Every level is completely filled
+
+    Example : 
+           A
+         /   \
+        B     C
+       / \   / \
+      D  E  F  G
+'''
