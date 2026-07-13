@@ -291,3 +291,69 @@ Types of Binary Trees
        / \   / \
       D  E  F  G
 '''
+
+"""
+Tree Traversal:
+Traversal means visiting each node of a tree exactly once.
+
+There are two main types of tree traversal:
+
+1. Breadth First Search (BFS)
+   - Visits all nodes level by level.
+   - Also called Level Order Traversal.
+
+2. Depth First Search (DFS)
+   - Explores as deep as possible before backtracking.
+
+DFS has three types:
+    1. Preorder  : Root -> Left -> Right
+    2. Inorder   : Left -> Root -> Right
+    3. Postorder : Left -> Right -> Root
+"""
+
+# ---------------- Preorder Traversal ----------------
+# Root -> Left -> Right
+
+def preorder_traversal(node):
+    if node is None:
+        return
+
+    print(node.data, end=", ")
+    preorder_traversal(node.left)
+    preorder_traversal(node.right)
+
+
+# ---------------- Inorder Traversal ----------------
+# Left -> Root -> Right
+
+def inorder_traversal(node):
+    if node is None:
+        return
+
+    inorder_traversal(node.left)
+    print(node.data, end=", ")
+    inorder_traversal(node.right)
+
+
+# Example usage
+print("Preorder Traversal:")
+preorder_traversal(root)
+
+print("\n\nInorder Traversal:")
+inorder_traversal(root)
+
+
+# ---------------- Postorder Traversal ----------------
+# Left -> Right -> Root
+
+def postorder_traversal(node):
+    if node is None:
+        return
+
+    postorder_traversal(node.left)
+    postorder_traversal(node.right)
+    print(node.data, end=", ")
+
+
+print("\n\nPostorder Traversal:")
+postorder_traversal(root)
