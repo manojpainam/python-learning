@@ -357,3 +357,12 @@ def postorder_traversal(node):
 
 print("\n\nPostorder Traversal:")
 postorder_traversal(root)
+
+#Linear data structure : data will stored in a line 12, 13, 15
+
+#hirarchial data structure : data will be stored in tree  or levels of example : files in a computer
+
+
+'''
+Trees are connetced by node. Topmost node is called root and connecting nodes in between are called root
+'''
