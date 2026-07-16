@@ -359,10 +359,72 @@ print("\n\nPostorder Traversal:")
 postorder_traversal(root)
 
 #Linear data structure : data will stored in a line 12, 13, 15
+#example : linked list, arrays, vectors
 
 #hirarchial data structure : data will be stored in tree  or levels of example : files in a computer
+#example : Trees
+
+'''
+Trees are connetced by node. Topmost node is called root and connecting nodes in between are called branches
+'''
+
+'''
+Terms which are used in tree (Binary Trees) -
+                        Generic tree :-
+                                Parent - top most or root element is called parent
+                                child - from 1 level when we have different noes then it is called child. child can also be parent to the its further children
+                        Binary Tree - 
+                                Binary Trees will have at max 2 children at each nodes
+                                binary in computer science is base 2 which means that the node can have (0, 1, 2)
+
+                                top most element is know as root
+                                leaf nodes - means nodes which will have the 0 children
+                        Branches - the connections between the nodes is known as branches
+                        siblings child - which will have the nodes at the same level
+                        levels - as it is hirarchial data structures the nodes are in the form of levels
+                        height - height = total levels of the tree
+                        subtree - it is a small part of a tree
+
+                        solution - try to calculate the solution for the left sub tree and then right subtree and combined entire tree which makes easier for breaking down the problem
 
 
 '''
-Trees are connetced by node. Topmost node is called root and connecting nodes in between are called root
-'''
+class TreeNode:
+    def __init__(self, data):
+        self.data = data
+        self.children = []
+        self.parent = None
+    
+    def add_children(self, child):
+        child.parent = self
+        self.children.append(child)
+
+def build_product_tree():
+    root = TreeNode("Electronics")
+    laptop = TreeNode("Laptop")
+    laptop.add_children(TreeNode("Mac"))
+    laptop.add_children(TreeNode("Dell insprion"))
+    laptop.add_children(TreeNode("HP pivilion"))
+
+    mobile = TreeNode("Mobile")
+    mobile.add_children(TreeNode("Iphone"))
+    mobile.add_children(TreeNode("Samsung"))
+    mobile.add_children(TreeNode("Vivo"))
+    mobile.add_children(TreeNode("Nothing"))
+    
+
+    tv = TreeNode("Telivisions")
+    tv.add_children(TreeNode("Samsung"))
+    tv.add_children(TreeNode("Sony"))
+    tv.add_children(TreeNode("LG"))
+
+    root.add_children(laptop)
+    root.add_children(mobile)
+    root.add_children(tv)
+
+    return root
+
+if __name__ == '__main__':
+    root = build_product_tree()
+    pass
+
