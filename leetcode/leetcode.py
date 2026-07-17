@@ -72,9 +72,7 @@ def addStrings(num1: str, num2: str) -> str:
 
 print("Adding strings : ", addStrings("89", "67"))
 
-
-
-def findLucky(self, arr: List[int]) -> int:
+def findLucky(arr: List[int]) -> int:
     freq = {}
 
     # Count frequencies
@@ -89,3 +87,5 @@ def findLucky(self, arr: List[int]) -> int:
             lucky = max(lucky, num)
 
     return lucky
+
+print("lucky number is :", findLucky([1, 2, 2, 3, 3, 3, 4, 4, 4, 4]))
