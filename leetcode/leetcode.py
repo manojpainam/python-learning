@@ -71,3 +71,21 @@ def addStrings(num1: str, num2: str) -> str:
     return "".join(result[::-1])
 
 print("Adding strings : ", addStrings("89", "67"))
+
+
+
+def findLucky(self, arr: List[int]) -> int:
+    freq = {}
+
+    # Count frequencies
+    for num in arr:
+        freq[num] = freq.get(num, 0) + 1
+
+    lucky = -1
+
+    # Find the largest lucky number
+    for num, count in freq.items():
+        if num == count:
+            lucky = max(lucky, num)
+
+    return lucky
