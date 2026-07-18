@@ -1,7 +1,22 @@
 from typing import List
 
 
-#boyer moore voting algorithm
+# ------------------------------------------------------------
+# Problem 1: Majority Element
+#
+# Given an integer array nums of size n, return the majority
+# element.
+#
+# The majority element is the element that appears more than
+# ⌊n / 2⌋ times. You may assume that the majority element
+# always exists in the array.
+#
+# Example:
+# Input: nums = [2,2,1,1,1,2,2]
+# Output: 2
+# ------------------------------------------------------------
+
+# Boyer-Moore Voting Algorithm
 def majorityElement(nums: List[int]) -> int:
     candidate = None
     count = 0
@@ -14,41 +29,86 @@ def majorityElement(nums: List[int]) -> int:
             count += 1
         else:
             count -= 1
-    
+
     return candidate
 
-print("Majority elelemt :", majorityElement([3, 4, 3, 4]))
+print("Majority element:", majorityElement([3, 4, 3, 4]))
+
+
+# ------------------------------------------------------------
+# Problem 2: Ugly Number
+#
+# An ugly number is a positive integer whose prime factors
+# are limited to 2, 3, and 5.
+#
+# Given an integer n, return True if n is an ugly number.
+# Otherwise, return False.
+#
+# Example:
+# Input: n = 8
+# Output: True
+# ------------------------------------------------------------
 
 def is_ugly(n):
     if n <= 0:
         return False
+
     for i in [2, 3, 5]:
         while n % i == 0:
             n //= i
+
     return n == 1
 
-print("Ugly number :", is_ugly(8))
+print("Ugly number:", is_ugly(8))
 
 
-def maximum69Number (num: int) -> int:
+# ------------------------------------------------------------
+# Problem 3: Maximum 69 Number
+#
+# You are given a positive integer consisting only of digits
+# 6 and 9.
+#
+# Return the maximum number you can get by changing at most
+# one digit (6 to 9 or 9 to 6).
+#
+# Example:
+# Input: 9669
+# Output: 9969
+# ------------------------------------------------------------
+
+def maximum69Number(num: int) -> int:
     max = num
     modified_num = str(num)
 
     for i in range(len(str(modified_num))):
         if modified_num[i] == str(6):
-            modified_num = modified_num[:i] + str(9) + modified_num[i+1:len(modified_num)]
+            modified_num = modified_num[:i] + str(9) + modified_num[i + 1:]
         elif modified_num[i] == str(9):
-            modified_num = modified_num[:i] + str(6) + modified_num[i+1:len(modified_num)]
-            
+            modified_num = modified_num[:i] + str(6) + modified_num[i + 1:]
+
         if int(modified_num) > int(max):
             max = modified_num
+
         modified_num = str(num)
 
     return int(max)
 
-print("maxmim number ", maximum69Number(9669))
+print("Maximum number:", maximum69Number(9669))
 
 
+# ------------------------------------------------------------
+# Problem 4: Add Strings
+#
+# Given two non-negative integers represented as strings,
+# return their sum as a string.
+#
+# You must not convert the inputs directly into integers or
+# use any built-in BigInteger library.
+#
+# Example:
+# Input: num1 = "89", num2 = "67"
+# Output: "156"
+# ------------------------------------------------------------
 
 def addStrings(num1: str, num2: str) -> str:
     i = len(num1) - 1
@@ -70,7 +130,22 @@ def addStrings(num1: str, num2: str) -> str:
 
     return "".join(result[::-1])
 
-print("Adding strings : ", addStrings("89", "67"))
+print("Adding strings:", addStrings("89", "67"))
+
+
+# ------------------------------------------------------------
+# Problem 5: Find Lucky Integer in an Array
+#
+# A lucky integer is an integer whose value is equal to its
+# frequency in the array.
+#
+# Return the largest lucky integer. If no lucky integer
+# exists, return -1.
+#
+# Example:
+# Input: [2,2,3,4]
+# Output: 2
+# ------------------------------------------------------------
 
 def findLucky(arr: List[int]) -> int:
     freq = {}
@@ -88,4 +163,4 @@ def findLucky(arr: List[int]) -> int:
 
     return lucky
 
-print("lucky number is :", findLucky([1, 2, 2, 3, 3, 3, 4, 4, 4, 4]))
+print("Lucky number:", findLucky([1, 2, 2, 3, 3, 3, 4, 4, 4, 4]))
