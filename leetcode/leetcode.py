@@ -164,3 +164,24 @@ def findLucky(arr: List[int]) -> int:
     return lucky
 
 print("Lucky number:", findLucky([1, 2, 2, 3, 3, 3, 4, 4, 4, 4]))
+
+def removeElement(nums: List[int], val: int) -> int:
+    """
+    Removes all occurrences of val from the array in-place.
+
+    Time Complexity: O(n)
+    Space Complexity: O(1)
+    """
+    write = 0
+
+    for num in nums:
+        if num != val:
+            nums[write] = num
+            write += 1
+
+    return write
+
+
+# Example Usage
+nums = [0, 1, 2, 2, 3, 0, 4, 2]
+print("Remove element :", removeElement(nums, 2))
