@@ -185,3 +185,26 @@ def removeElement(nums: List[int], val: int) -> int:
 # Example Usage
 nums = [0, 1, 2, 2, 3, 0, 4, 2]
 print("Remove element :", removeElement(nums, 2))
+
+
+"""
+LeetCode 389. Find the Difference
+
+Given two strings `s` and `t`, where `t` is formed by shuffling `s` and adding one extra character, return the extra character.
+
+Time Complexity: O(n)
+Space Complexity: O(1)
+"""
+
+def findTheDifference(s: str, t: str) -> str:
+        freq = {}
+
+        for ch in s:
+            freq[ch] = freq.get(ch, 0) + 1
+
+        for ch in t:
+            if ch not in freq or freq[ch] == 0:
+                return ch
+            freq[ch] -= 1
+
+print("Extra digit in charas : ", findTheDifference("litmn", "litmjn"))
