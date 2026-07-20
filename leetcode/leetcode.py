@@ -208,3 +208,53 @@ def findTheDifference(s: str, t: str) -> str:
             freq[ch] -= 1
 
 print("Extra digit in charas : ", findTheDifference("litmn", "litmjn"))
+
+
+"""
+LeetCode 136. Single Number
+
+Problem Statement:
+Given a non-empty array of integers `nums`, every element appears exactly
+twice except for one element, which appears only once. Find and return
+that single element.
+
+You must implement a solution with:
+- O(n) time complexity
+- O(1) extra space
+
+Examples:
+Input: nums = [2, 2, 1]
+Output: 1
+
+Input: nums = [4, 1, 2, 1, 2]
+Output: 4
+
+Input: nums = [1]
+Output: 1
+
+Constraints:
+- 1 <= nums.length <= 3 * 10^4
+- -3 * 10^4 <= nums[i] <= 3 * 10^4
+- Every element appears exactly twice except for one.
+
+Approach:
+- Initialize a variable `result` to 0.
+- Traverse the array and XOR each element with `result`.
+- Since:
+    a ^ a = 0
+    a ^ 0 = a
+  all duplicate numbers cancel each other out, leaving only the
+  number that appears once.
+
+Time Complexity: O(n)
+Space Complexity: O(1)
+"""
+def singleNumber(nums: List[int]) -> int:
+    result = 0
+
+    for num in nums:
+        result ^= num
+
+    return result
+
+print("single number : ", singleNumber([4, 1, 2, 1, 2]))
