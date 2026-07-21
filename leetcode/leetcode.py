@@ -258,3 +258,65 @@ def singleNumber(nums: List[int]) -> int:
     return result
 
 print("single number : ", singleNumber([4, 1, 2, 1, 2]))
+
+
+"""
+LeetCode 290. Word Pattern
+
+Problem Statement:
+Given a pattern and a string s, determine if s follows the same pattern.
+
+Here, "follow" means there is a one-to-one mapping (bijection) between a
+character in pattern and a non-empty word in s.
+
+Rules:
+1. Each character must map to exactly one word.
+2. No two different characters can map to the same word.
+3. The number of characters in pattern must equal the number of words in s.
+
+Example 1:
+Input:  pattern = "abba", s = "dog cat cat dog"
+Output: True
+
+Example 2:
+Input:  pattern = "abba", s = "dog cat cat fish"
+Output: False
+
+Example 3:
+Input:  pattern = "aaaa", s = "dog cat cat dog"
+Output: False
+
+Time Complexity: O(n²)
+- Checking `word in mapping.values()` takes O(n) in the worst case.
+
+Space Complexity: O(n)
+- Stores at most one mapping for each unique character.
+"""
+
+def wordPattern(pattern: str, s: str) -> bool:
+    words = s.split()
+
+    # Number of pattern characters and words must match.
+    if len(pattern) != len(words):
+        return False
+
+    mapping = {}
+
+    for i in range(len(pattern)):
+        char = pattern[i]
+        word = words[i]
+
+        # Existing character must map to the same word.
+        if char in mapping:
+            if mapping[char] != word:
+                return False
+        else:
+            # Prevent two different characters from mapping to the same word.
+            if word in mapping.values():
+                return False
+
+            mapping[char] = word
+
+    return True
+
+print("word pattern:", wordPattern("abba", "dog cat cat dog"))
