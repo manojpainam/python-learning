@@ -320,3 +320,81 @@ def wordPattern(pattern: str, s: str) -> bool:
     return True
 
 print("word pattern:", wordPattern("abba", "dog cat cat dog"))
+
+"""
+LeetCode 278. First Bad Version
+
+Problem Statement:
+You are a product manager and currently leading a team to develop a new product.
+Unfortunately, the latest version of your product fails the quality check.
+
+Since each version is developed based on the previous version, all versions after
+a bad version are also bad.
+
+Suppose you have n versions [1, 2, ..., n] and you want to find the first bad one,
+which causes all the following versions to be bad.
+
+You are given an API:
+
+    isBadVersion(version)
+
+which returns:
+- True if the version is bad.
+- False otherwise.
+
+Your task is to find the first bad version while minimizing the number of calls
+to the API.
+
+Example 1:
+Input: n = 5, bad = 4
+Output: 4
+
+Explanation:
+Version 1 -> Good
+Version 2 -> Good
+Version 3 -> Good
+Version 4 -> Bad
+Version 5 -> Bad
+
+The first bad version is 4.
+
+Example 2:
+Input: n = 1, bad = 1
+Output: 1
+
+Constraints:
+- 1 <= bad <= n <= 2^31 - 1
+
+Approach:
+- The versions form a sorted (monotonic) sequence:
+      Good Good Good Bad Bad Bad
+- Use Binary Search to find the boundary where versions change
+  from good to bad.
+- If mid is bad, the first bad version is either mid or before it,
+  so search the left half.
+- Otherwise, search the right half.
+
+Time Complexity: O(log n)
+Space Complexity: O(1)
+"""
+
+first_bad = 4
+
+def isBadVersion(version):
+    return version >= first_bad
+
+def firstBadVersion(n: int) -> int:
+    left = 1
+    right = n
+
+    while left < right:
+        mid = left + (right - left) // 2
+
+        if isBadVersion(mid):
+            right = mid
+        else:
+            left = mid + 1
+
+    return left
+
+print("Fetch the first bad numbers :", firstBadVersion(5))
