@@ -398,3 +398,42 @@ def firstBadVersion(n: int) -> int:
     return left
 
 print("Fetch the first bad numbers :", firstBadVersion(5))
+
+
+"""
+LeetCode 268 - Missing Number
+
+Problem Statement:
+Given an array `nums` containing `n` distinct numbers in the range `[0, n]`,
+return the only number in the range that is missing from the array.
+
+Example 1:
+Input: nums = [3, 0, 1]
+Output: 2
+
+Example 2:
+Input: nums = [0, 1]
+Output: 2
+
+Example 3:
+Input: nums = [9,6,4,2,3,5,7,0,1]
+Output: 8
+
+Constraints:
+- n == len(nums)
+- 1 <= n <= 10^4
+- 0 <= nums[i] <= n
+- All the numbers in nums are unique.
+
+Follow-up:
+Can you solve it using:
+1. O(n) time and O(1) extra space?
+2. A mathematical formula or bit manipulation?
+"""
+def missing_number(nums: List[int]) -> int:
+    n = len(nums)
+    expected_sum = n * (n + 1) // 2
+    actual_sum = sum(nums)
+    return expected_sum - actual_sum
+
+print("Missing sum:", missing_number([0, 3, 2, 6, 4, 1]))
