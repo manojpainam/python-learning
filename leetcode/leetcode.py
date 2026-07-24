@@ -437,3 +437,79 @@ def missing_number(nums: List[int]) -> int:
     return expected_sum - actual_sum
 
 print("Missing sum:", missing_number([0, 3, 2, 6, 4, 1]))
+
+
+"""
+LeetCode 205. Isomorphic Strings
+
+Problem Statement:
+Given two strings `s` and `t`, determine if they are isomorphic.
+
+Two strings are isomorphic if the characters in `s` can be replaced to get `t`.
+
+Rules:
+1. Every character in `s` must map to exactly one character in `t`.
+2. No two different characters in `s` can map to the same character in `t`.
+3. A character can map to itself.
+
+Example 1:
+Input: s = "egg", t = "add"
+Output: True
+
+Explanation:
+e -> a
+g -> d
+
+The mapping is one-to-one, so the strings are isomorphic.
+
+Example 2:
+Input: s = "foo", t = "bar"
+Output: False
+
+Explanation:
+'o' first maps to 'a', but later should map to 'r', which is not allowed.
+
+Example 3:
+Input: s = "paper", t = "title"
+Output: True
+
+Constraints:
+- 1 <= s.length <= 5 * 10^4
+- t.length == s.length
+- s and t consist of any valid ASCII character.
+
+Solution:
+"""
+
+
+def isIsomorphic(s: str, t: str) -> bool:
+    # If the lengths are different, they cannot be isomorphic.
+    if len(s) != len(t):
+        return False
+
+    # Dictionary to store mapping from s -> t
+    s_to_t = {}
+
+    # Dictionary to store reverse mapping from t -> s
+    t_to_s = {}
+
+    # Traverse both strings simultaneously.
+    for c1, c2 in zip(s, t):
+
+        # Check if c1 already has a mapping.
+        if c1 in s_to_t:
+            if s_to_t[c1] != c2:
+                return False
+        else:
+            s_to_t[c1] = c2
+
+        # Check if c2 already has a reverse mapping.
+        if c2 in t_to_s:
+            if t_to_s[c2] != c1:
+                return False
+        else:
+            t_to_s[c2] = c1
+
+    return True
+
+print("Check isIsomorphic:" , isIsomorphic("add", "egg"))
