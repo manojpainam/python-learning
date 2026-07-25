@@ -543,8 +543,8 @@ Example 3:
 Input: n = 2
 Output: true
 '''
-def can_win_num(n: int) -> bool:
+def can_win_nim(n: int) -> bool:
     #Approach if the number multiple of 4 you will loose for sure
     return n % 4 != 0
 
-print("can win nim:", can_win_num(3))
+print("can win nim:", can_win_nim(3))
