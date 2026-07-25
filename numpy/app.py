@@ -1,0 +1,66 @@
+'''
+Numpy - It is a pythin librarory used to work with arrays
+        it is also used for linear algbra, forier transform and matrics
+        why - it is faster than the lists
+        it stores the memory in continious manner so that it doesn't take much time to access the data
+        installation - using command : pip install numpy
+'''
+#importing numpy alias to np
+import numpy as np
+
+
+arr = np.array([1, 2, 3, 4, 5])
+print(arr)
+
+#check numpy version
+print(np.__version__)
+
+#the array object in numppyis called as ndarray
+print("type of array in numpy is:", type(arr))
+
+#to create an array we can pass either as a list, typle or set as well
+arr2 = np.array((1, 2, 3, 4, 5))
+print(arr2)
+
+
+'''
+Dinemnsons in arrays - a dimension in array length is one level of array depth
+'''
+array_od = np.array(90)
+array_1d = np.array([1, 2, 3, 4, 5])
+array_2d = np.array([[1, 2, 3, 4], [5, 6, 7, 8]])
+array_3d = np.array([[[1, 2, 3], [4, 5, 6]], [[1, 2, 3], [4, 5, 6]]])
+#using ndmin we can deine the number of dimensions
+array_4d = np.array([1, 2, 3, 4], ndmin=4)
+print("0D array:", array_od, "\n1D array:", array_1d, "\n2D array:", array_2d, "\n3D arrays:", array_3d)
+print("Multi dimensional arrays:", array_4d.ndim)
+
+'''
+Array Indexing
+'''
+#Accessing array elements
+print(arr[0])
+
+#Accessing array elements - 2D
+print(array_2d[0, 1])
+
+#Accessing array elements - 3D
+print(array_3d[0, 1, 2])
+
+#negative indexing 
+print(array_2d[1, -1])
+
+'''
+Slicing
+'''
+#slice array elements
+print(arr[1:3])
+
+#from third to end
+print(arr[3:])
+
+#negative indexing
+print(arr[-3:-1])
+
+#step in slicing by two
+print(arr[0::2])
