@@ -606,3 +606,70 @@ def maxProduct(n: int) -> int:
     return max_product
 
 print("max_product", maxProduct(124))
+
+
+'''
+Given a date, return the corresponding day of the week for that date.
+
+The input is given as three integers representing the day, month and year respectively.
+
+Return the answer as one of the following values {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"}.
+
+Note: January 1, 1971 was a Friday.
+
+ 
+
+Example 1:
+
+Input: day = 31, month = 8, year = 2019
+Output: "Saturday"
+Example 2:
+
+Input: day = 18, month = 7, year = 1999
+Output: "Sunday"
+Example 3:
+
+Input: day = 15, month = 8, year = 1993
+Output: "Sunday"
+ 
+
+Constraints:
+
+The given dates are valid dates between the years 1971 and 2100.
+'''
+
+def day_of_the_week(day: int, month: int, year: int) -> str:
+    weekdays = [
+            "Friday",
+            "Saturday",
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday"
+        ]
+
+    month_days = [31,28,31,30,31,30,31,31,30,31,30,31]
+
+    def isLeap(year):
+        return year % 400 == 0 or (year % 4 == 0 and year % 100 != 0)
+
+    total_days = 0
+
+    # Count days for complete years
+    for y in range(1971, year):
+        total_days += 366 if isLeap(y) else 365
+
+    # Count days for complete months
+    for m in range(month - 1):
+        total_days += month_days[m]
+        if m == 1 and isLeap(year):   # February
+            total_days += 1
+
+    # Count days in current month
+    total_days += day - 1
+
+    return weekdays[total_days % 7]
+
+
+print("Day is :", day_of_the_week(31, 12, 2025))
