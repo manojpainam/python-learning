@@ -64,3 +64,40 @@ print(arr[-3:-1])
 
 #step in slicing by two
 print(arr[0::2])
+
+#print elements from the 2d arrays - array[row_selector, column_selector]
+print(array_2d[1, 3])
+
+#certain values from to
+print(array_2d[1, 1:3])
+
+#from both arrays
+print(array_2d[0:2, 1:3])
+
+
+'''
+Data types in Numpy - In numpy we have the following data types
+                      i - integer, b - boolean, u - unsigned integer, f - float, c - complex float, m - timedelta, M - datetime, O - object
+                      S - string, U - unicode string, V - fixed chunck of memeory for other types (Void)
+'''
+#checking data type of the array object
+print(arr.dtype)
+str_arr = np.array(['banana', 'apple'])
+print(str_arr.dtype)
+
+#creating array with definite datatype
+int_arr = np.array([1, 2, 3, 4, 5], dtype='i')
+
+#change existing array object datatype
+new_arr = arr.astype('i')
+
+#change data type from one to the other
+float_arr = np.array([1.1, 2.2, 3.6])
+new_float_arr = float_arr.astype('i')
+print(new_float_arr)
+
+
+'''
+Copy - Copy is a new array 
+View - view is just a view of original array
+'''
