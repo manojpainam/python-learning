@@ -98,6 +98,89 @@ print(new_float_arr)
 
 
 '''
-Copy - Copy is a new array 
-View - view is just a view of original array
+Copy - Copy is a new array -  any modifcations done to the copied array will not effect the orginal array
+View - view is just a view of original array - nay modifcations done to the existing array will affec the orginal array as well
 '''
+cp_arr = arr.copy()
+cp_arr[0] = 69
+print("Copied array after modification is :", cp_arr, "Original array even after modfications", arr)
+
+view_arr = arr.view()
+view_arr[0] = 56
+print("Array after view applied :", view_arr, "Original array:", arr)
+
+#print the base of the array
+#Copy - None (as this is a new array created from the existing array) , View - arary that is got from as a view
+print("Base array for copied array:", cp_arr.base, "base array for view array:", view_arr)
+
+
+'''
+Shape of the array - Shape of the array is number of dimensions in the array
+'''
+#It is represented in tuple
+print("Shape of the array is:", array_4d.shape)
+
+'''
+Reshaping - add/delete dimensions of the array
+            4 - dimensions and 3 - values in each
+'''
+arr_re = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
+print("Reshaped array is:", arr_re.reshape(4, 3))
+print("Unknown dimensions:", arr_re.reshape(2, 2, -1))
+print("Flattening arrays:", array_2d.reshape(-1))
+
+
+'''
+Iterating arrays
+'''
+#iterating single dimensional arrays
+for element in arr_re:
+    print(element)
+
+#iteratng 2-d arrays
+for elements in array_2d:
+    print("Outer elements:", elements)
+    for element in elements:
+        print("inner element:", element)
+
+#iterating using nditer function
+for i in np.nditer(arr):
+    print(i)
+
+#change the data type of element during runtime
+for i in np.nditer(arr, flags=['buffered'], op_dtypes=['S']):
+    print(i)
+
+#Enumeration - Enumeration means mentioning sequence number of somethings one by one.
+for idx, x in np.ndenumerate(arr):
+    print(idx, x)
+
+'''
+Joining - Putting two or more arrays in a single array
+'''
+arr = np.concatenate((arr, arr_re))
+print("Array after joining:", arr)
+
+array_2d_1 = np.array([[10, 11, 12], [13, 14, 15]])
+print(array_2d_1)
+
+#using stack
+arr_stack = np.stack((arr2, array_1d), axis=1)
+print("Stack arrays:", arr_stack)
+
+#Split
+print("Split array:", np.array_split(arr_re, 3))
+
+#Searching arrays - getting the elements of the array using search
+print("element found at the indexes:", np.where(arr == 2), "element which are divisble 2:", np.where(arr % 2 == 0))
+
+#searching element from the side using sorting
+print("Searching the element from the sorted array using the side:", np.searchsorted(arr, 7, side="right"))
+
+#Sorting
+print("Sorted array is:", np.sort(arr))
+
+#Filtering - getting some elements of the existing array and creating new array out of them is called filtering
+#this can also be done using the conditions as well
+x = [True, False, True, False,  True]
+print("newly created array:", array_1d[x])
