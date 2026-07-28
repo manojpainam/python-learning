@@ -718,3 +718,41 @@ def binary_search(nums: List[int], target: int) -> int:
 
 nums = [-1, 2, 3, 4, 5, 6, 9, 25]
 print("9 is at index:", binary_search(nums, 9))
+
+
+'''
+Given a string s, return the string after replacing every uppercase letter with the same lowercase letter.
+
+ 
+
+Example 1:
+
+Input: s = "Hello"
+Output: "hello"
+Example 2:
+
+Input: s = "here"
+Output: "here"
+Example 3:
+
+Input: s = "LOVELY"
+Output: "lovely"
+ 
+
+Constraints:
+
+1 <= s.length <= 100
+s consists of printable ASCII characters.
+'''
+def to_lower_case(s: str) -> str:
+    result = []
+
+    for char in s:
+        if 'A' <= char <= 'Z':
+            result.append(chr(ord(char) + 32))
+        else:
+            result.append(char)
+
+    return "".join(result)
+
+print("To lower case:", to_lower_case("HELLO"))
