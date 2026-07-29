@@ -756,3 +756,44 @@ def to_lower_case(s: str) -> str:
     return "".join(result)
 
 print("To lower case:", to_lower_case("HELLO"))
+
+'''
+Given two strings ransomNote and magazine, return true if ransomNote can be constructed by using the letters from magazine and false otherwise.
+
+Each letter in magazine can only be used once in ransomNote.
+
+ 
+
+Example 1:
+
+Input: ransomNote = "a", magazine = "b"
+Output: false
+Example 2:
+
+Input: ransomNote = "aa", magazine = "ab"
+Output: false
+Example 3:
+
+Input: ransomNote = "aa", magazine = "aab"
+Output: true
+ 
+
+Constraints:
+    1 <= ransomNote.length, magazine.length <= 105
+    ransomNote and magazine consist of lowercase English letters.
+'''
+
+def can_construct(ransomNote: str, maganize: str) -> bool:
+    mapping = {}
+
+    for char in maganize:
+        mapping[char] = mapping.get(char, 0) + 1
+
+    for char in ransomNote:
+        if mapping.get(char, 0) == 0:
+            return False
+        mapping[char] -= 1
+
+    return True
+
+print("Can construct the word:", can_construct("aab", "baa"))
