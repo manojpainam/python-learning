@@ -33,7 +33,7 @@ def intial_function():
 #calling function
 intial_function()
 
-#as fruit is a global variable it will fetchb orange
+#as fruit is a global variable it will fetch orange
 print(fruit)
 
 #As review is defined as global it will fetch value

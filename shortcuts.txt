@@ -7,4 +7,4 @@ command + x --> cut
 command + v --> paste
 command + c --> copy
 control + - --> previous cursor location
-contril + shift + - ---> next cursor location
+control + shift + - ---> next cursor location
