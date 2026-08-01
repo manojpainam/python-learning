@@ -22,7 +22,7 @@ print(numbers[0]) #this will take exactly one operation to find out the element
 print(numbers[len(numbers) - 1]) #Even this will take exactly one opeation to get the last element of the list
 
 sum_of_n_numbers = 100
-sum = sum_of_n_numbers * (sum_of_n_numbers + 1) / 2  #Even if the sum_of_n_numbers changes to higer number it will be judt one operation
+sum = sum_of_n_numbers * (sum_of_n_numbers + 1) / 2  #Even if the sum_of_n_numbers changes to higer number it will be just one operation
 print(sum)
 
 '''
@@ -41,7 +41,7 @@ def factorial(number):
 
     return factorial
 
-print(factorial(10))
+print("factorial :", factorial(10))
 
 '''
 O(n) Time complexity -
@@ -61,7 +61,7 @@ def max_subarray_sum(arr):
     
     return res
 
-print(max_subarray_sum([-2, -4]))
+print("max sub array sum:", max_subarray_sum([-2, -4]))
 
 '''
 O(n^2) or O(n^3) Time complexity - 
@@ -82,7 +82,7 @@ def bubble_sort(arr):
     return arr
 
 arr = [90, 8, 56, 4, 55, 543, 876, 1034, 78]
-print(bubble_sort(arr))
+print("bubble sort:", bubble_sort(arr))
 
 
 '''
