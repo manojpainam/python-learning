@@ -871,6 +871,7 @@ merge(nums1, m, nums2, n)
 print(nums1)
 
 '''
+###Search insert postion###
 Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
 
 You must write an algorithm with O(log n) runtime complexity.
@@ -914,3 +915,50 @@ def search_insert(nums: List[int], target: int) -> int:
     return left
 
 print("Insert postion is :", search_insert([1, 2, 4, 5, 6], 3))
+
+
+'''
+###contains dupliactes###
+Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
+
+ 
+
+Example 1:
+
+Input: nums = [1,2,3,1]
+
+Output: true
+
+Explanation:
+
+The element 1 occurs at the indices 0 and 3.
+
+Example 2:
+
+Input: nums = [1,2,3,4]
+
+Output: false
+
+Explanation:
+
+All elements are distinct.
+
+Example 3:
+
+Input: nums = [1,1,1,3,3,4,3,2,4,2]
+
+Output: true
+
+ 
+
+Constraints:
+
+1 <= nums.length <= 105
+-109 <= nums[i] <= 109
+'''
+
+def contains_duplicates(nums: List[int]) -> bool:
+    #set len comparision
+    return len(nums) != len(set(nums))
+
+print("Contains dupliactes:", contains_duplicates([1, 2, 3, 4, 5, 4]))
