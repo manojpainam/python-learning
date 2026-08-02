@@ -1003,3 +1003,57 @@ def longest_common_prefix(strs: List[str]) -> str:
     return prefix
 
 print("Longest prefix is : ", longest_common_prefix(["manoj", "mango", "mangrooves"]))
+
+
+'''
+###414. Third Maximum Number###
+Given an integer array nums, return the third distinct maximum number in this array. If the third maximum does not exist, return the maximum number.
+
+ 
+
+Example 1:
+
+Input: nums = [3,2,1]
+Output: 1
+Explanation:
+The first distinct maximum is 3.
+The second distinct maximum is 2.
+The third distinct maximum is 1.
+Example 2:
+
+Input: nums = [1,2]
+Output: 2
+Explanation:
+The first distinct maximum is 2.
+The second distinct maximum is 1.
+The third distinct maximum does not exist, so the maximum (2) is returned instead.
+Example 3:
+
+Input: nums = [2,2,3,1]
+Output: 1
+Explanation:
+The first distinct maximum is 3.
+The second distinct maximum is 2 (both 2's are counted together since they have the same value).
+The third distinct maximum is 1.
+'''
+
+def third_max_element(nums: List[int]) -> int:
+    first = second = third = None
+
+    for num in nums:
+        if first == num or second == num or third == num:
+            continue
+
+        if first is None or num > first:
+            third = second
+            second = first
+            first = num
+        elif second is None or num > second:
+            third = second
+            second = num
+        else:
+            third = num
+
+    return first if third is None else third
+
+print("Third maximum element is :", third_max_element([-1,2,3]))
