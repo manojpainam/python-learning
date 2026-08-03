@@ -1057,3 +1057,25 @@ def third_max_element(nums: List[int]) -> int:
     return first if third is None else third
 
 print("Third maximum element is :", third_max_element([-1,2,3]))
+
+
+'''
+###Reverse vowels### 
+'''
+def reverse_vowels(s: str) -> str:
+    left, right = 0, len(s) - 1
+    vowels = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'}
+    s = list(s)
+
+    while left < right:
+        if s[left] not in vowels:
+            left += 1
+        elif s[right] not in vowels:
+            right -= 1
+        else:
+            s[left], s[right] = s[right], s[left]
+            left += 1
+            right -= 1
+    return "".join(s)
+
+print("after reversing vowels is:", reverse_vowels("manoj"))
