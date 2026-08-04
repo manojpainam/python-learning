@@ -1079,3 +1079,23 @@ def reverse_vowels(s: str) -> str:
     return "".join(s)
 
 print("after reversing vowels is:", reverse_vowels("manoj"))
+
+'''
+###Best time to buy stcoks###
+'''
+def maxProfit(prices: List[int]) -> int:
+    min_price = float('inf')
+    max_profit = 0
+
+    for price in prices:
+        if price < min_price:
+            min_price = price
+
+        profit = price - min_price
+
+        if profit > max_profit:
+            max_profit = profit
+
+    return max_profit
+
+print("Best time to buy stock is:", maxProfit([67, 89, 23, 45, 67, 88, 58, 96, 46]))
