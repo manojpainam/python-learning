@@ -1099,3 +1099,17 @@ def maxProfit(prices: List[int]) -> int:
     return max_profit
 
 print("Best time to buy stock is:", maxProfit([67, 89, 23, 45, 67, 88, 58, 96, 46]))
+
+'''
+###Max peoducts of three numbers###
+
+Approach : find the last three indexes product or find product of first two negative numbers and then multiply with last element
+'''
+
+def three_max_product(nums: List[int]) -> int:
+    nums.sort()
+    max_product = nums[-3] * nums[-2] * nums[-1]
+    max_product_1 = nums[-1] * nums[0] * nums[1]
+    return max(max_product, max_product_1)
+
+print("max product :", three_max_product([-100, -99, 1, 2, 4, 3]))
