@@ -1113,3 +1113,14 @@ def three_max_product(nums: List[int]) -> int:
     return max(max_product, max_product_1)
 
 print("max product :", three_max_product([-100, -99, 1, 2, 4, 3]))
+
+
+'''
+###intersection####
+
+Approach using the sets
+'''
+def intersection(nums1: List[int], nums2: List[int]) -> List[int]:
+    return list(set(nums1).intersection(set(nums2)))
+
+print("Intersection of the numbers:", intersection([4,9,5], [9,4,9,8,4]))
