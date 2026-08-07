@@ -1124,3 +1124,20 @@ def intersection(nums1: List[int], nums2: List[int]) -> List[int]:
     return list(set(nums1).intersection(set(nums2)))
 
 print("Intersection of the numbers:", intersection([4,9,5], [9,4,9,8,4]))
+
+'''
+###contains dupliactes ||###
+'''
+def containsNearbyDuplicate(nums: List[int], k: int) -> bool:
+        last_seen = {}
+
+        for i, num in enumerate(nums):
+            if num in last_seen:
+                if i - last_seen[num] <= k:
+                    return True
+
+            last_seen[num] = i
+
+        return False
+
+print("containes duplicates || :", containsNearbyDuplicate([1,2,3,1], 3))
