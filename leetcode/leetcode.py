@@ -1141,3 +1141,34 @@ def containsNearbyDuplicate(nums: List[int], k: int) -> bool:
         return False
 
 print("containes duplicates || :", containsNearbyDuplicate([1,2,3,1], 3))
+
+'''
+###summary range###
+'''
+def summaryRanges(nums: List[int]) -> List[str]:
+        result = []
+
+        if not nums:
+            return result
+
+        start = nums[0]
+
+        for i in range(1, len(nums)):
+            # Current number is not consecutive
+            if nums[i] != nums[i - 1] + 1:
+                if start == nums[i - 1]:
+                    result.append(str(start))
+                else:
+                    result.append(f"{start}->{nums[i - 1]}")
+
+                start = nums[i]
+
+        # Add the final range
+        if start == nums[-1]:
+            result.append(str(start))
+        else:
+            result.append(f"{start}->{nums[-1]}")
+
+        return result
+
+print("summary range:", summaryRanges([0,2,3,4,6,8,9]))
