@@ -1,5 +1,5 @@
 '''
-In python list is one of the data sturuces and it will server as a dynamic arrays
+In python list is one of the data sturuces and it will serve as a dynamic arrays
 '''
 
 #defining a list
