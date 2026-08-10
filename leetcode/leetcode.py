@@ -1172,3 +1172,17 @@ def summaryRanges(nums: List[int]) -> List[str]:
         return result
 
 print("summary range:", summaryRanges([0,2,3,4,6,8,9]))
+
+'''
+###Find disappearing numbers###
+'''
+def findDisappearedNumbers(nums: List[int]) -> List[int]:
+    n = len(nums)
+    counts = [0] * (n + 1)
+
+    for num in nums:
+        counts[num] = 1
+
+    return [i for i in range(1, n + 1) if counts[i] == 0]
+
+print("Disappeared number is :", findDisappearedNumbers([4, 3, 2, 7, 8, 2, 3, 1]))
