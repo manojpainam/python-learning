@@ -252,3 +252,13 @@ if __name__ == '__main__':
     # Insert "dragon" at index 2
     ll.insert_at_index(2, "dragon")
     ll.print()
+
+
+'''
+    Types of linked list : Singly linked list doubly linked list,  doubly linked list, circular linked list -
+            - singly linked list : it is the simple kind of all linked lists and connected to the next node.
+            - Doubly linked list : it has noded with addresses to both previous and next nodes.
+            - circular linked list - A circular linked list is like a singly or doubly linked list with the first node, the "head", and the last node, the "tail", connected.
+
+            -
+'''
