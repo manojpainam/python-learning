@@ -1186,3 +1186,21 @@ def findDisappearedNumbers(nums: List[int]) -> List[int]:
     return [i for i in range(1, n + 1) if counts[i] == 0]
 
 print("Disappeared number is :", findDisappearedNumbers([4, 3, 2, 7, 8, 2, 3, 1]))
+
+def search_single_element(nums: List[int]) -> int:
+    left = 0
+    right = len(nums) - 1
+
+    while left < right:
+        mid = left + (right - left) // 2
+
+        if mid % 2 == 1:
+            mid -= 1
+
+        if nums[mid] == nums[mid+1]:
+            left = mid + 2
+        else:
+            right = mid
+    return nums[left]
+
+print("search single element:", search_single_element([1, 1, 2, 3, 3, 4, 4, 5, 5]))
