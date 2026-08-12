@@ -1204,3 +1204,19 @@ def search_single_element(nums: List[int]) -> int:
     return nums[left]
 
 print("search single element:", search_single_element([1, 1, 2, 3, 3, 4, 4, 5, 5]))
+
+
+def findMedianSortedArrays(nums1: List[int], nums2: List[int]) -> float:
+    merged_arr = nums1 + nums2
+    merged_arr.sort()
+
+    low = 0
+    high = len(merged_arr) - 1
+
+    mid = low + (high - low) // 2
+    if len(merged_arr) % 2 == 0:
+        return (merged_arr[mid] + merged_arr[mid+1]) / 2
+    return merged_arr[mid]
+
+print("midean of sorted arrays is :", findMedianSortedArrays([1, 2], [3, 4]))
+        
