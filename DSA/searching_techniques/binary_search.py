@@ -60,4 +60,35 @@ def is_valid_perfect_square(num: int) -> bool:
     return False
 
 print("Number is a perfect square :", is_valid_perfect_square(26))
+
+
+'''
+Search through rotated array
+'''
+def search(nums, target):
+    left = 0
+    right = len(nums) - 1
+
+    while left <= right:
+        mid = (left + right) // 2
+
+        if nums[mid] == target:
+            return mid
+
+        # Left half is sorted
+        if nums[left] <= nums[mid]:
+            if nums[left] <= target < nums[mid]:
+                right = mid - 1
+            else:
+                left = mid + 1
+
+        # Right half is sorted
+        else:
+            if nums[mid] < target <= nums[right]:
+                left = mid + 1
+            else:
+                right = mid - 1
+
+    return -1
+print("search found at index : ", search([4,5,6,7,0,1,2], 0))
          
