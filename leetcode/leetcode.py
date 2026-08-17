@@ -1,4 +1,5 @@
 from typing import List
+from collections import Counter
 
 
 # ------------------------------------------------------------
@@ -1219,4 +1220,21 @@ def findMedianSortedArrays(nums1: List[int], nums2: List[int]) -> float:
     return merged_arr[mid]
 
 print("midean of sorted arrays is :", findMedianSortedArrays([1, 2], [3, 4]))
-        
+
+def commonChars(words: List[str]) -> List[str]:
+        common = Counter(words[0])
+
+        for word in words[1:]:
+            current = Counter(word)
+
+            for char in common:
+                common[char] = min(common[char], current[char])
+
+        result = []
+
+        for char, count in common.items():
+            result.extend([char] * count)
+
+        return result
+
+print("common chars is :", commonChars(["bella","label","roller"]))
