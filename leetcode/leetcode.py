@@ -1238,3 +1238,20 @@ def commonChars(words: List[str]) -> List[str]:
         return result
 
 print("common chars is :", commonChars(["bella","label","roller"]))
+
+def calPoints(operations: List[str]) -> int:
+    stack = []
+
+    for operation in operations:
+        if operation == 'C':
+            stack.pop()
+        elif operation == 'D':
+            stack.append(2 * stack[-1])
+        elif operation == '+':
+            stack.append(stack[-1] + stack[-2])
+        else:
+            stack.append(int(operation))
+
+    return sum(stack)
+
+print("calPoints: {}".format(calPoints(["5","-2","4","C","D","9","+","+"])))
