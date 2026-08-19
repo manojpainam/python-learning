@@ -1255,3 +1255,18 @@ def calPoints(operations: List[str]) -> int:
     return sum(stack)
 
 print("calPoints: {}".format(calPoints(["5","-2","4","C","D","9","+","+"])))
+
+
+def moveZeroes(nums: List[int]) -> None:
+    # Pointer to track the position for the next non-zero element
+    non_zero_pos = 0
+    
+    # Iterate through the array
+    for i in range(len(nums)):
+        if nums[i] != 0:
+            # Swap elements using Python's one-liner swap syntax
+            nums[i], nums[non_zero_pos] = nums[non_zero_pos], nums[i]
+            non_zero_pos += 1
+    return nums
+
+print("move zeros", moveZeroes([0, 1, 2, 3, 0, 4, 5, 8, 0, 6]))
