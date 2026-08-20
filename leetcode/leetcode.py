@@ -1270,3 +1270,19 @@ def moveZeroes(nums: List[int]) -> None:
     return nums
 
 print("move zeros", moveZeroes([0, 1, 2, 3, 0, 4, 5, 8, 0, 6]))
+
+
+def findMaxConsecutiveOnes(nums: List[int]) -> int:
+    maxCount = 0
+    count = 0
+
+    for num in nums:
+        if num == 1:
+            count += 1
+            maxCount = max(maxCount, count)
+        else:
+            count = 0
+
+    return maxCount
+
+print("find max consecutive ones:", findMaxConsecutiveOnes([1,0,1,1,1,0,1]))
