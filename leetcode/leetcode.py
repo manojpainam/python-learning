@@ -1286,3 +1286,9 @@ def findMaxConsecutiveOnes(nums: List[int]) -> int:
     return maxCount
 
 print("find max consecutive ones:", findMaxConsecutiveOnes([1,0,1,1,1,0,1]))
+
+#Is power of two
+def is_pow_of_two(num: int) -> bool:
+    return (num > 0) and ((num & (num - 1)) == 0)
+
+print("check if number is power of two :", is_pow_of_two(16))
