@@ -1292,3 +1292,21 @@ def is_pow_of_two(num: int) -> bool:
     return (num > 0) and ((num & (num - 1)) == 0)
 
 print("check if number is power of two :", is_pow_of_two(16))
+
+#length of the longest substring
+def lengthOfLongestSubstring(s: str) -> int:
+    current = ""
+    max_length = 0
+
+    for char in s:
+        if char in current:
+            # Remove characters from the left
+            # until the duplicate is gone
+            while char in current:
+                current = current[1:]
+
+        current += char
+
+    return max(max_length, len(current))
+
+
