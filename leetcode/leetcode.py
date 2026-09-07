@@ -1310,7 +1310,7 @@ def lengthOfLongestSubstring(s: str) -> int:
     return max(max_length, len(current))
 
 #fina max average for a subarray
-def findMaxAverage(self, nums: List[int], k: int) -> float:
+def findMaxAverage(nums: List[int], k: int) -> float:
 
         window_sum = sum(nums[:k])
         max_sum = window_sum
@@ -1323,4 +1323,18 @@ def findMaxAverage(self, nums: List[int], k: int) -> float:
 
         return max_sum / k
 
+def power_of_four(n: int) -> bool:
+    count = 0
 
+    #check if the number is power of 2
+    if n > 0 and (n & (n - 1)) == 0:
+        while n > 1:
+            #count number of shifts
+            n >>= 1
+            count += 1
+
+        return count % 2 == 0
+
+    return False
+
+print("Check if a number is power of 4:", power_of_four(649))
