@@ -1,6 +1,7 @@
 command + . --> organise imports
 command + shift + 3 --> entire page screenshot
 command + shift + 4 --> selected area screenshot
+control + command + shift + 4 --> copy the screeshot to the clipboard
 command + k + w --> close all windows
 command + s --> save
 command + x --> cut
