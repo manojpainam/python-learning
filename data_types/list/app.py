@@ -24,11 +24,12 @@ print(names[1]) #indexing
 print(names[-1]) #print last element negative indexing
 print(names[1:3]) #range of indexing
 
+#check name existance of a list
 if 'manoj' in names:
     print("Name exists in the list")
 
 '''
-chnage list items
+change list items
 '''
 names[2] = "Manoj Painam" #change the 3rd element of the list
 print("List after updation", names)
@@ -99,6 +100,8 @@ while(count < len(contries)):
     count += + 1
 
 print("\nUsing short for loop")
+#this is called as the list comprehensaion where the new list will be created based on few operations in the existing list
+#new_list = [expression for item in iterable if condition == True]
 [print(x) for x in contries]
 
 #List conprehension

@@ -32,7 +32,7 @@ Use this table for a one-glance overview of the whole 90 days. Full topic checkl
 
 | Day | Phase | Topic | Status |
 |---:|---|---|---|
-| 1 | 0 | Baseline: Python basics + DSA baseline | ⬜ |
+| 1 | 0 | Baseline: Python basics + DSA baseline | 🟢 |
 | 2 | 0 | Python fundamentals — data structures deep dive | ⬜ |
 | 3 | 0 | Functions + scope (LEGB, closures, recursion) | ⬜ |
 | 4 | 0 | OOP basics | ⬜ |
@@ -184,16 +184,16 @@ Do not reread everything. Instead:
 - [X] `if / elif / else`
 - [X] Loops
 - [X] Functions
-- [ ] Lists
-- [ ] Tuples
-- [ ] Dictionaries
-- [ ] Sets
-- [ ] Strings
+- [X] Lists
+- [X] Tuples
+- [X] Dictionaries
+- [X] Sets
+- [X] Strings
 ### DSA Baseline
-- [ ] Two Sum
-- [ ] Contains Duplicate
+- [X] Two Sum
+- [X] Contains Duplicate
 ### Status
-- [ ] Day 1 completed — Status: ⬜
+- [X] Day 1 completed — Status: 🟢
 
 ---
 
