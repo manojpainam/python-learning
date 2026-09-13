@@ -179,11 +179,11 @@ Do not reread everything. Instead:
 
 ## Day 1 — Baseline
 ### Python Basics
-- [ ] Variables
-- [ ] Data types
-- [ ] `if / elif / else`
-- [ ] Loops
-- [ ] Functions
+- [X] Variables
+- [X] Data types
+- [X] `if / elif / else`
+- [X] Loops
+- [X] Functions
 - [ ] Lists
 - [ ] Tuples
 - [ ] Dictionaries

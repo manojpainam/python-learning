@@ -71,7 +71,7 @@ print(greet_user())
 fullname = get_fullname(lname = "P", fname = "Vamshi")
 print(fullname)
 
-#postional only args method we can specify uding / if we try to use the keyword then it will throw error
+#postional only args method we can specify ading / if we try to use the keyword then it will throw error
 def postional_arg(number1, /):
     print("Received the number ", number1)
 
@@ -211,7 +211,7 @@ def find_max_number(numbers):
 print(find_max_number([1, 4, 5, 9, 6, 0]))
 
 import sys
-#default value fro recursion limit is 1000 can be increased using setrecursionlimit
+#default value for recursion limit is 1000 can be increased using setrecursionlimit
 print(sys.getrecursionlimit())
 
 

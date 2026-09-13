@@ -48,3 +48,13 @@ for x in range(0, 100, 5):
     print(x)
 else:
     print("=====================")
+
+
+#while loop
+number = 0
+
+while number < 100:
+    number += 2
+
+#this will produce the result as 100
+print(number)
