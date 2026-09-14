@@ -1338,3 +1338,18 @@ def power_of_four(n: int) -> bool:
     return False
 
 print("Check if a number is power of 4:", power_of_four(649))
+
+
+import math
+def is_power_of(number: int, base: int) -> bool:
+    if base <= 0:
+        return False
+
+    if base == 1:
+        return n == 1
+
+    res = math.log(number) / math.log(base)
+
+    return abs(res - round(res)) < 1e-9
+
+print("checking if a number is a power of somehting :", is_power_of(243, 3))
