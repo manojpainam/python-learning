@@ -158,3 +158,9 @@ def majority_element(nums: List[int]) -> int:
     return majority
 
 print("Majority element of the list is :", majority_element([1, 2, 3, 3, 3, 4, 4, 4, 4, 5]))
+
+def contains_duplicates(nums: List[int]) -> bool:
+    #check the length of the list is equals to the len of the set conversion of the list
+    return len(nums) != len(set(nums))
+
+print("containes duplicates in the list:", contains_duplicates([1, 2, 3, 4, 5, 6, 7]))
