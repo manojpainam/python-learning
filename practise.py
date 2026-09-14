@@ -135,3 +135,26 @@ def twoSum(nums: List[int], target: int) -> List[int]:
     return []
 
 print(twoSum([2, 7, 5, 8], 7))
+
+
+#a number is said to be majority element if the number is appeared in the list more than len(list) / 2 times
+def majority_element(nums: List[int]) -> int:
+    #create to varibles to track count and majority
+    majority = None
+    count = 0
+
+    #looping thorugh numbers
+    for num in nums:
+        #if count is 0 then update the majority
+        if count == 0:
+            majority = num
+
+        #if current number and majority is equal then update the count (increase)
+        if num == majority:
+            count += 1
+        else:
+            #else update the count (decrease)
+            count -= 1
+    return majority
+
+print("Majority element of the list is :", majority_element([1, 2, 3, 3, 3, 4, 4, 4, 4, 5]))
