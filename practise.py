@@ -164,3 +164,98 @@ def contains_duplicates(nums: List[int]) -> bool:
     return len(nums) != len(set(nums))
 
 print("containes duplicates in the list:", contains_duplicates([1, 2, 3, 4, 5, 6, 7]))
+
+
+#mutable vs immutable
+
+#immutable once the value is created it can't be chnaged in python tuple and strings are immutable
+try:
+    my_tuple = ("1", "2", "5")
+    my_tuple[1] = "56"
+except Exception as e:
+    print(str(e))
+
+try:
+    my_string = "manoj"
+    my_string[2] = "t"
+except Exception as e:
+    print(str(e))
+
+#mutable objets where its values can be changed once they have been create - In python list, dict, sets are mutable
+bikes = ["glamour", "unicorn", "shine"]
+
+bikes[1] = "Honda Unicorn"
+
+print(bikes)
+
+my_info["name"] = "Manoj Painam"
+
+print("\n", my_info)
+
+
+
+#### indexing #######
+marks = [100, 99, 78, 89, 90]
+
+print(marks[0])
+print(marks[-5])
+
+#indexing can also be used to modify the vakues of a list
+marks[0] = 69
+print(marks)
+
+print("with step:", marks[0:5:2])
+
+#since strings are immutabke we can't change the values it once it was created we have seen the same above
+
+#indexing and slicing
+fruits = ["apple", "banana", "kiwi", "water melon", "dragon fruit"]
+
+print(fruits[0:3])
+print(fruits[:3])
+print("Reverse of a list is :", fruits[::-1])
+
+for index, value in enumerate(fruits):
+    print("index:", index, "value:", value)
+
+it = iter(fruits)
+
+print(next(it))
+print(next(it))
+print(next(it))
+print(next(it))
+print(next(it))
+
+#membership if an object it is used to check the membership of a object in sequence.
+#this includes the operators like in/not in
+
+l = [1, 2, 3, 4, 5]
+statment = "Hello world"
+
+if 2 in l:
+    print("2 exists in the list")
+
+if 'o' in statment:
+    print("'o' exists in the statement")
+
+if 'z' not in  statment:
+    print("z is not in the statement")
+
+import operator
+
+print(operator.contains(l, 5))
+
+
+data = [1, 2, 2, 3, 4, 4, 5]
+
+print(list(set(data)))
+
+
+s = "programming"
+
+frequency = {}
+
+for i in s:
+    frequency[i] = frequency.get(i, 0) + 1
+print(frequency)
+    

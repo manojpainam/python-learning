@@ -33,7 +33,7 @@ Use this table for a one-glance overview of the whole 90 days. Full topic checkl
 | Day | Phase | Topic | Status |
 |---:|---|---|---|
 | 1 | 0 | Baseline: Python basics + DSA baseline | 🟢 |
-| 2 | 0 | Python fundamentals — data structures deep dive | ⬜ |
+| 2 | 0 | Python fundamentals — data structures deep dive | 🟢 |
 | 3 | 0 | Functions + scope (LEGB, closures, recursion) | ⬜ |
 | 4 | 0 | OOP basics | ⬜ |
 | 5 | 0 | Git + Linux basics | ⬜ |
@@ -198,23 +198,23 @@ Do not reread everything. Instead:
 ---
 
 ## Day 2 — Python Fundamentals
-- [ ] List
-- [ ] Tuple
-- [ ] Set
-- [ ] Dictionary
-- [ ] String
-- [ ] Mutable vs immutable
-- [ ] Indexing
-- [ ] Slicing
-- [ ] Iteration
-- [ ] Membership
-- [ ] Copying
-- [ ] `a = b` vs `a.copy()`
+- [X] List
+- [X] Tuple
+- [X] Set
+- [X] Dictionary
+- [X] String
+- [X] Mutable vs immutable
+- [X] Indexing
+- [X] Slicing
+- [X] Iteration
+- [X] Membership
+- [X] Copying
+- [X] `a = b` vs `a.copy()`
 ### Practice
-- [ ] Write examples for each data structure
-- [ ] Solve 2 small problems
+- [X] Write examples for each data structure
+- [X] Solve 2 small problems
 ### Status
-- [ ] Day 2 completed — Status: ⬜
+- [X] Day 2 completed — Status: 🟢
 
 ---
 
