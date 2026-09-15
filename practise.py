@@ -258,4 +258,25 @@ frequency = {}
 for i in s:
     frequency[i] = frequency.get(i, 0) + 1
 print(frequency)
+
+
+#creating a function
+def my_function():
+    print("This is a function and it will be executed if and only if it is called")
+
+#calling a function
+my_function()
+
+def greet_people(name = "User"):
+    print("Hello,", name)
+
+greet_people("Manoj")
+greet_people()
+
+def name_people(*people):
+    print(people[0], people[1], people[2])
+
+name_people("manoj", "vamshi", "purna")
+
+lambda a, b : a + b
     
