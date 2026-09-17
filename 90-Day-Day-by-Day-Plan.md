@@ -34,7 +34,7 @@ Use this table for a one-glance overview of the whole 90 days. Full topic checkl
 |---:|---|---|---|
 | 1 | 0 | Baseline: Python basics + DSA baseline | 🟢 |
 | 2 | 0 | Python fundamentals — data structures deep dive | 🟢 |
-| 3 | 0 | Functions + scope (LEGB, closures, recursion) | ⬜ |
+| 3 | 0 | Functions + scope (LEGB, closures, recursion) | 🟢 |
 | 4 | 0 | OOP basics | ⬜ |
 | 5 | 0 | Git + Linux basics | ⬜ |
 | 6 | 0 | DSA basics (Big O, arrays, hashmap, stack, queue) | ⬜ |
@@ -219,39 +219,39 @@ Do not reread everything. Instead:
 ---
 
 ## Day 3 — Functions + Scope
-- [ ] Local scope
-- [ ] Global scope
-- [ ] LEGB rule
-- [ ] Parameters
-- [ ] Default arguments
-- [ ] `*args`
-- [ ] `**kwargs`
-- [ ] Lambda
-- [ ] Closures
-- [ ] Recursion
+- [X] Local scope
+- [X] Global scope
+- [X] LEGB rule
+- [X] Parameters
+- [X] Default arguments
+- [X] `*args`
+- [X] `**kwargs`
+- [X] Lambda
+- [X] Closures
+- [X] Recursion
 ### Practice
-- [ ] Write examples for local/global scope
-- [ ] Write a closure
-- [ ] Write a recursive function
+- [X] Write examples for local/global scope
+- [X] Write a closure
+- [X] Write a recursive function
 ### Interview Questions
-- [ ] Explain LEGB
-- [ ] Difference between `*args` and `**kwargs`
-- [ ] What is a closure?
+- [X] Explain LEGB
+- [X] Difference between `*args` and `**kwargs`
+- [X] What is a closure?
 ### Status
-- [ ] Day 3 completed — Status: ⬜
+- [X] Day 3 completed — Status: ⬜
 
 ---
 
 ## Day 4 — OOP
-- [ ] Class
-- [ ] Object
-- [ ] Constructor
-- [ ] Instance variable
-- [ ] Class variable
-- [ ] Instance method
-- [ ] `classmethod`
-- [ ] `staticmethod`
-- [ ] Inheritance
+- [X] Class
+- [X] Object
+- [X] Constructor
+- [X] Instance variable
+- [X] Class variable
+- [X] Instance method
+- [X] `classmethod`
+- [X] `staticmethod`
+- [X] Inheritance
 - [ ] Composition
 - [ ] Polymorphism
 - [ ] Encapsulation

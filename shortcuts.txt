@@ -9,3 +9,4 @@ command + v --> paste
 command + c --> copy
 control + - --> previous cursor location
 control + shift + - ---> next cursor location
+control + command + F --> to get into the full screen

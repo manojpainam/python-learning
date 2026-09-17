@@ -279,4 +279,102 @@ def name_people(*people):
 name_people("manoj", "vamshi", "purna")
 
 lambda a, b : a + b
-    
+
+# Closures: The inner function retains access to the outer function's 'factor' variable.
+def make_multiplier(factor):
+    def multiply_by(x):
+        return x * factor
+    return multiply_by
+
+double = make_multiplier(2)
+print(double(5))
+print(double.__closure__[0].cell_contents)
+
+#scope:
+def scope_of_varibales():
+    global x
+    x = 500
+    def inner_func():
+        x = 600
+        print("The value is {}".format(x))
+    print("prior to calling the scope of varibales : {}".format(x))
+    return inner_func()
+
+scope_of_varibales()
+
+#recusrion : calling the same function multiple times
+def count_down(n):
+    if n == 0:
+        return "Done!"
+    else:
+        return count_down(n-1)
+
+print(count_down(5))
+
+
+#class and its creation
+class MyDetails:
+    name = "manoj"
+
+#onject creation for a class
+details = MyDetails()
+print(details.name)
+
+details1 = MyDetails()
+print(details1.name)
+#object deletion
+del details1
+
+#class
+class Person:
+    my_class_var = "This is for class variable"
+    #constructor
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    #methods of a ijn
+    def get_details(self):
+        return "My name is : {} age is {}".format(self.name, self.age)
+
+person = Person("Manoj", 26)
+print(person.my_class_var)
+print("Calling my details :", person.get_details())
+
+from datetime import date
+class Student:
+    stream = "CSE" # this is a class variable
+    def __init__(self, name, age):
+        self.name = name #instance variable
+        self.age = age
+
+    def say_hi(self):
+        return "Hello from {}".format(self.name)
+
+    @classmethod
+    def from_birth_year(cls, name, year):
+        return cls(name, date.today().year - year)
+
+    # Static method: A utility function bound to the class, independent of class or instance state.
+    @staticmethod
+    def is_adult(age):
+        return age >= 18
+
+print("Is student is an adult:", Student.is_adult(25))
+s = Student.from_birth_year("Manoj", 2000)
+print(s.name, s.age)
+s1 = Student("Student1", 25)
+print("I am {} and my stream is {}".format(s1.name, s1.stream))
+print(s1.say_hi())
+
+class College(Student):
+    def __init__(self, name, age, clg_name):
+        super().__init__(name, age)  # This initializes name and age from the Student class
+        self.clg_name = clg_name
+
+    def get_college_info(self):
+        return "College details is : {}".format(self.clg_name)
+
+college = College("Manoj", 25, "Aditya Engineering college", )
+print(college.say_hi())
+print(college.get_college_info())
