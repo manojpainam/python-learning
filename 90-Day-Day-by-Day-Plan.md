@@ -252,7 +252,7 @@ Do not reread everything. Instead:
 - [X] `classmethod`
 - [X] `staticmethod`
 - [X] Inheritance
-- [ ] Composition
+- [X] Composition
 - [ ] Polymorphism
 - [ ] Encapsulation
 ### Interview Questions
