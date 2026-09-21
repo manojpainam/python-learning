@@ -35,11 +35,11 @@ Use this table for a one-glance overview of the whole 90 days. Full topic checkl
 | 1 | 0 | Baseline: Python basics + DSA baseline | 🟢 |
 | 2 | 0 | Python fundamentals — data structures deep dive | 🟢 |
 | 3 | 0 | Functions + scope (LEGB, closures, recursion) | 🟢 |
-| 4 | 0 | OOP basics | ⬜ |
-| 5 | 0 | Git + Linux basics | ⬜ |
-| 6 | 0 | DSA basics (Big O, arrays, hashmap, stack, queue) | ⬜ |
-| 7 | 0 | **Weekly Revision / Buffer** | ⬜ |
-| 8 | 1 | Python execution model (CPython, bytecode) | ⬜ |
+| 4 | 0 | OOP basics | 🟢 |
+| 5 | 0 | Git + Linux basics | 🔴 |
+| 6 | 0 | DSA basics (Big O, arrays, hashmap, stack, queue) | 🟡 |
+| 7 | 0 | **Weekly Revision / Buffer** | 🟡 |
+| 8 | 1 | Python execution model (CPython, bytecode) | 🟢 |
 | 9 | 1 | Python data structure internals (hashing, list/dict internals) | ⬜ |
 | 10 | 1 | Comprehensions (list/dict/set/generator expr) | ⬜ |
 | 11 | 1 | Iterators + generators | ⬜ |
@@ -238,7 +238,7 @@ Do not reread everything. Instead:
 - [X] Difference between `*args` and `**kwargs`
 - [X] What is a closure?
 ### Status
-- [X] Day 3 completed — Status: ⬜
+- [X] Day 3 completed — Status: 🟢
 
 ---
 
@@ -253,58 +253,58 @@ Do not reread everything. Instead:
 - [X] `staticmethod`
 - [X] Inheritance
 - [X] Composition
-- [ ] Polymorphism
-- [ ] Encapsulation
+- [X] Polymorphism
+- [X] Encapsulation
 ### Interview Questions
-- [ ] Composition vs inheritance
-- [ ] `classmethod` vs `staticmethod`
-- [ ] Class variable vs instance variable
+- [X] Composition vs inheritance
+- [X] `classmethod` vs `staticmethod`
+- [X] Class variable vs instance variable
 ### Practice
-- [ ] Build a small OOP example
+- [X] Build a small OOP example
 ### Status
-- [ ] Day 4 completed — Status: ⬜
+- [X] Day 4 completed — Status: 🟢
 
 ---
 
 ## Day 5 — Git + Linux Basics
 ### Git
-- [ ] `git clone`
-- [ ] `git status`
-- [ ] `git add`
-- [ ] `git commit`
-- [ ] `git push`
-- [ ] `git pull`
-- [ ] `git branch`
-- [ ] `git switch`
+- [X] `git clone`
+- [X] `git status`
+- [X] `git add`
+- [X] `git commit`
+- [X] `git push`
+- [X] `git pull`
+- [X] `git branch`
+- [X] `git switch`
 - [ ] `git merge`
-- [ ] `git rebase`
-- [ ] `git stash`
-- [ ] `git log`
+- [X] `git rebase`
+- [X] `git stash`
+- [X] `git log`
 - [ ] `git reset`
 ### Linux
-- [ ] `ls`
-- [ ] `cd`
-- [ ] `pwd`
-- [ ] `mkdir`
-- [ ] `rm`
-- [ ] `cp`
-- [ ] `mv`
-- [ ] `grep`
-- [ ] `cat`
-- [ ] `head`
-- [ ] `tail`
-- [ ] `ps`
-- [ ] `kill`
+- [X] `ls`
+- [X] `cd`
+- [X] `pwd`
+- [X] `mkdir`
+- [X] `rm`
+- [X] `cp`
+- [X] `mv`
+- [X] `grep`
+- [X] `cat`
+- [X] `head`
+- [X] `tail`
+- [X] `ps`
+- [X] `kill`
 - [ ] `chmod`
 ### Practice
-- [ ] Create a Git repository
-- [ ] Create a branch
-- [ ] Make commits
+- [X] Create a Git repository
+- [X] Create a branch
+- [X] Make commits
 - [ ] Merge branches
 - [ ] Practice rebase
 - [ ] Practice stash
 ### Status
-- [ ] Day 5 completed — Status: ⬜
+- [X] Day 5 completed — Status: 🔴
 
 ---
 
@@ -315,14 +315,14 @@ Do not reread everything. Instead:
 - [ ] Arrays
 - [ ] Strings
 - [ ] HashMap
-- [ ] Set
-- [ ] Stack
-- [ ] Queue
+- [X] Set
+- [X] Stack
+- [X] Queue
 ### Practice
 - [ ] Solve 3–4 easy problems
 - [ ] Write time and space complexity for each
 ### Status
-- [ ] Day 6 completed — Status: ⬜
+- [ ] Day 6 completed — Status: 🟡
 
 ---
 
@@ -354,15 +354,15 @@ Do not reread everything. Instead:
 # Strong Python
 
 ## Day 8 — Python Execution Model
-- [ ] Python interpreter
-- [ ] CPython
-- [ ] Bytecode
-- [ ] `.pyc`
-- [ ] `is` vs `==`
+- [X] Python interpreter
+- [X] CPython
+- [X] Bytecode
+- [X] `.pyc`
+- [X] `is` vs `==`
 ### Practice
-- [ ] Explain how Python code executes at a high level
+- [X] Explain how Python code executes at a high level
 ### Status
-- [ ] Day 8 completed — Status: ⬜
+- [X] Day 8 completed — Status: 🟢
 
 ---
 

@@ -367,6 +367,8 @@ s1 = Student("Student1", 25)
 print("I am {} and my stream is {}".format(s1.name, s1.stream))
 print(s1.say_hi())
 
+#this is an example of inheritance
+#Inheritance : It is used to reuse and extend functionality from the parent class 
 class College(Student):
     def __init__(self, name, age, clg_name):
         super().__init__(name, age)  # This initializes name and age from the Student class
@@ -378,3 +380,55 @@ class College(Student):
 college = College("Manoj", 25, "Aditya Engineering college", )
 print(college.say_hi())
 print(college.get_college_info())
+
+#Composition: A class reuses code by containing objects of other classes (Has-A relationship), rather than inheriting from them.
+class Animals:
+    def do_sound(self):
+        print("Ehh Ehh")
+
+class Dog:
+    def __init__(self):
+        self.animal = Animals()
+
+    def bark(self):
+        self.animal.do_sound()
+        print("dow bow")
+
+class Cat:
+    def do_sound(slef):
+        print("Meow")
+        
+dog = Dog()
+dog.bark()
+animal = Animals()
+cat = Cat()
+
+#polymorphism
+animal.do_sound()
+cat.do_sound()
+
+# Encapsulation: Bundling data and methods, using _ for protected and __ for private access.
+class Office:
+    def __init__(self, name, location, emp_count):
+        self.name = name
+        self.__location = location
+        self.__emp_count = emp_count
+
+    def get_location(self):
+        return self.__location
+
+    def set_location(self, location):
+        self.__location = location
+
+    def set_emp_count(self, emp_count):
+        self.__emp_count = emp_count
+
+    def get_emp_count(self):
+        return self.__emp_count
+
+office = Office("Accenture", "Hyderabad", 100)
+print(office.name)
+print(office.get_location())
+office.set_location("Mumbai")
+print(office.get_location())
+print(office.get_emp_count())
